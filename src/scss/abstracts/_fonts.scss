@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
+
+$fw-lighter: 300;
+$fw-light: 400;
+$fw-normal: 500;
+$fw-medium: 600;
+$fw-semibold: 700;
+$fw-bold: 800;
+$fw-bolder: 900;
+
+$fs-1: 1rem * 0.7;
+$fs-2: 1rem * 0.75;
+$fs-3: 1rem * 0.8;
+$fs-4: 1rem * 0.85;
+$fs-5: 1rem * 0.9;
+$fs-6: 1rem * 0.95;
+$fs-7: 1rem;
+$fs-8: 1rem * 1.5;
+$fs-9: 1rem * 2;
+$fs-10: 1rem * 3;
+$fs-xl: 1rem * 4;
+
+@media screen and (min-width: 1000px) {
+  $fs-10: 1rem;
+}

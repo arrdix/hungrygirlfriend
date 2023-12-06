@@ -1,0 +1,343 @@
+@use '../abstracts/mixin' as mixin;
+@use '../abstracts/colors' as clr;
+@use '../abstracts/fonts' as fonts;
+
+.restaurant-wrapper {
+  width: 100%;
+}
+.restaurant-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.05);
+  filter: brightness(25%) grayscale(100%) blur(5px);
+  transition: transform .3s ease-in-out, filter .3s ease-in-out;
+}
+.box-wrapper {
+  overflow: hidden;
+  margin-block: 0;
+
+  @media screen and (min-width: 650px) {
+    margin-block: .25rem;
+    gap: .25rem;
+    @include mixin.grid-col(2 , 1);
+    @include mixin.grid-row(5, 1);
+  }
+
+  @media screen and (min-width: 850px) {
+    margin-block: .25rem;
+    gap: .25rem;
+    @include mixin.grid-col(3, 1);
+    @include mixin.grid-row(4, .5);
+  }
+
+  @media screen and (min-width: 1200px) {
+    @include mixin.grid-col(4, 1);
+    @include mixin.grid-row(4, .5);
+  }
+}
+.box {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: .5rem;
+
+  @media screen and (min-width: 650px) {
+    margin-bottom: 0;
+  }
+}
+.box-1,
+.box-2,
+.box-3,
+.box-4,
+.box-5,
+.box-6,
+.box-6,
+.box-7,
+.box-8,
+.box-9 {
+  position: relative;
+}
+
+.box-1 {
+  @media screen and (min-width: 650px) {
+    @include mixin.grid-item-col(1, 2);
+    @include mixin.grid-item-row(1, 3);
+  }
+
+  @media screen and (min-width:850px) {
+    @include mixin.grid-item-col(1, 3);
+    @include mixin.grid-item-row(1, 3);
+  }
+
+  @media screen and (min-width: 1200px) {
+    @include mixin.grid-item-col(1, 3);
+    @include mixin.grid-item-row(1, 3);
+  }
+}
+.box-2 {
+  @media screen and (min-width: 650px) {
+
+  }
+
+  @media screen and (min-width:850px) {
+    @include mixin.grid-item-col(3);
+    @include mixin.grid-item-row(1, 2);
+  }
+
+  @media screen and (min-width: 1200px) {
+    @include mixin.grid-item-col(3);
+    @include mixin.grid-item-row(1, 2);
+  }
+}
+.box-3 {
+  @media screen and (min-width: 650px) {
+
+  }
+
+  @media screen and (min-width:850px) {
+    @include mixin.grid-item-col(3);
+    @include mixin.grid-item-row(2, 3);
+  }
+
+  @media screen and (min-width: 1200px) {
+    @include mixin.grid-item-col(4);
+    @include mixin.grid-item-row(1, 2);
+  }
+}
+.box-4 {
+  @media screen and (min-width: 650px) {
+
+  }
+
+  @media screen and (min-width:850px) {
+    @include mixin.grid-item-col(1, 2);
+    @include mixin.grid-item-row(3, 4);
+  }
+
+  @media screen and (min-width: 1200px) {
+    @include mixin.grid-item-col(3, 5);
+    @include mixin.grid-item-row(2, 3);
+  }
+}
+.box-5 {
+  @media screen and (min-width: 650px) {
+
+  }
+
+  @media screen and (min-width:850px) {
+    @include mixin.grid-item-col(1, 2);
+    @include mixin.grid-item-row(4, 5);
+  }
+
+  @media screen and (min-width: 1200px) {
+    @include mixin.grid-item-col(1);
+    @include mixin.grid-item-row(3, 4);
+  }
+}
+.box-6 {
+  @media screen and (min-width: 650px) {
+
+  }
+
+  @media screen and (min-width:850px) {
+    @include mixin.grid-item-col(2, 4);
+    @include mixin.grid-item-row(3, 5);
+  }
+
+  @media screen and (min-width: 1200px) {
+    @include mixin.grid-item-col(1);
+    @include mixin.grid-item-row(4, 5);
+  }
+}
+.box-7 {
+  @media screen and (min-width: 650px) {
+
+  }
+
+  @media screen and (min-width:850px) {
+    @include mixin.grid-item-col(1, 2);
+    @include mixin.grid-item-row(5, 6);
+  }
+
+  @media screen and (min-width: 1200px) {
+    @include mixin.grid-item-col(2, 4);
+    @include mixin.grid-item-row(3, 5);
+  }
+}
+.box-8 {
+  @media screen and (min-width: 650px) {
+
+  }
+
+  @media screen and (min-width:850px) {
+    @include mixin.grid-item-col(2, 3);
+    @include mixin.grid-item-row(5, 6);
+  }
+
+  @media screen and (min-width: 1200px) {
+    @include mixin.grid-item-col(4);
+    @include mixin.grid-item-row(3, 4);
+  }
+}
+.box-9 {
+  @media screen and (min-width: 650px) {
+
+  }
+
+  @media screen and (min-width:850px) {
+    @include mixin.grid-item-col(3, 4);
+    @include mixin.grid-item-row(5, 6);
+  }
+
+  @media screen and (min-width: 1200px) {
+    @include mixin.grid-item-col(4);
+    @include mixin.grid-item-row(4, 5);
+  }
+}
+.box-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  padding: 1rem;
+  opacity: 1;
+  text-align: center;
+  color: clr.$clr-primary;
+  transition: opacity .3s ease-in-out;
+  @include mixin.flexbox(center, center, column);
+
+  // normal box
+  & .box-tag {
+    padding-block: .5rem;
+    padding-inline: 1rem;
+    margin-bottom: .5rem;
+    border-radius: 5px;
+    gap: .5rem;
+    @include mixin.flexbox(start, center, row);
+
+    & p {
+      color: clr.$clr-primary;
+      font-size: fonts.$fs-1;
+      font-weight: fonts.$fw-medium;
+    }
+
+    & .fa-utensils {
+      color: clr.$clr-success;
+    }
+  }
+
+  & .box-title {
+    font-size: fonts.$fs-8;
+    line-height: auto;
+    font-weight: 700;
+
+    @media screen and (min-width: 650px) {
+    font-size: fonts.$fs-9;
+    line-height: 2.5rem;
+    }
+  }
+
+  & .box-city {
+    font-size: fonts.$fs-7;
+    margin-bottom: 1rem;
+
+    @media screen and (min-width: 650px) {
+      font-size: fonts.$fs-8;
+      margin-bottom: 2rem;
+    }
+  }
+
+  & .box-description {
+    font-size: fonts.$fs-4;
+    margin-bottom: 1rem;
+
+    @media screen and (min-width: 650px) {
+      font-size: fonts.$fs-6;
+      margin-bottom: 2rem;
+    }
+  }
+
+  & .box-star-wrapper {
+    font-size: fonts.$fs-4;
+    margin-bottom: .5rem;
+    gap: .5rem;
+    @include mixin.flexbox(center, center, row);
+
+    & .fa-star {
+      color: clr.$clr-golden;
+    }
+
+    & .fa-star-half-stroke {
+      color: clr.$clr-golden;
+    }
+
+    @media screen and (min-width: 650px) {
+      font-size: fonts.$fs-7;
+      gap: 1rem;
+    }
+  }
+
+  & .box-rating {
+    font-size: fonts.$fs-7;
+
+    @media screen and (min-width: 650px) {
+      font-size: fonts.$fs-8;
+    }
+  }
+  
+  // small box
+  & .box-small-title {
+    font-size: fonts.$fs-8;
+    font-weight: 700;
+  }
+
+  & .box-small-city {
+    font-size: fonts.$fs-7;
+    margin-bottom: 1rem;
+  }
+
+  & .box-small-description {
+    font-size: fonts.$fs-4;
+    margin-bottom: 1rem;
+  }
+
+  & .box-small-star-wrapper {
+    font-size: fonts.$fs-4;
+    margin-bottom: .5rem;
+    gap: .5rem;
+    @include mixin.flexbox(center, center, row);
+
+    & .fa-star {
+      color: clr.$clr-golden;
+    }
+
+    & .fa-star-half-stroke {
+      color: clr.$clr-golden;
+    }
+  }
+
+  & .box-small-rating {
+    font-size: fonts.$fs-7;
+  }
+
+  // box overlay effect
+  &:hover + .restaurant-image {
+    transform: scale(1);
+    filter: brightness(100%);
+    transition: transform .3s ease-in-out, filter .3s ease-in-out;
+  }
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+  }
+}
+.small-label {
+  font-size: fonts.$fs-7;
+}
+.smaller-label {
+  font-size: fonts.$fs-2;
+}

@@ -1,0 +1,25 @@
+html {
+  scroll-behavior: smooth;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Montserrat', sans-serif !important;
+  background-color: black;
+  margin: 0;
+}
+footer {
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button {
+  margin: 0;
+  padding: 0;
+}

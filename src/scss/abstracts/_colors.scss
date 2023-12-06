@@ -1,0 +1,11 @@
+$clr-primary: #FAF9F6;
+$clr-dark: #0E0C0A;
+$clr-hover: #DCDCDC;
+$clr-golden: #DAA520;
+$clr-success: #138808;
+$clr-focus: #ADD8E6;
+
+.grayscale {
+  filter: grayscale(100%);
+  filter: brightness(50%);
+}
