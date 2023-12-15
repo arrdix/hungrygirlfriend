@@ -6,4 +6,11 @@ import '../scss/styles.scss';
 // Import all of Bootstrap's JS
 import * as bootstrap from 'bootstrap';
 
-console.log(window.innerHeight);
+const heroOverlay = document.getElementById('hero-overlay');
+const formOverlay = document.getElementById('form-overlay');
+const btnBook = document.getElementById('btn-book');
+
+btnBook.addEventListener('click', () => {
+  heroOverlay.classList.toggle('active');
+  formOverlay.classList.toggle('active');
+});

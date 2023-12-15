@@ -1,0 +1,11 @@
+.disposable {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .5s linear, visibility .5s linear;
+
+  &.active {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s linear, visibility .5s linear;
+  }
+}
