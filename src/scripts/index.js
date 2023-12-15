@@ -10,6 +10,10 @@ const heroOverlay = document.getElementById('hero-overlay');
 const formOverlay = document.getElementById('form-overlay');
 const btnBook = document.getElementById('btn-book');
 
+setTimeout(() => {
+  formOverlay.classList.remove('d-none');
+}, 500);
+
 btnBook.addEventListener('click', () => {
   heroOverlay.classList.toggle('active');
   formOverlay.classList.toggle('active');
