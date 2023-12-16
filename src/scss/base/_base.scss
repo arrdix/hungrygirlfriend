@@ -23,6 +23,20 @@ button {
   margin: 0;
   padding: 0;
 }
+a,
+button {
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
 .d-none {
   display: none !important;
+}
+.glass {
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.1px);
+  -webkit-backdrop-filter: blur(6.1px);
 }

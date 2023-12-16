@@ -6,15 +6,21 @@ import '../scss/styles.scss';
 // Import all of Bootstrap's JS
 import * as bootstrap from 'bootstrap';
 
-const heroOverlay = document.getElementById('hero-overlay');
-const formOverlay = document.getElementById('form-overlay');
-const btnBook = document.getElementById('btn-book');
+import { MenuModal } from './MenuModal';
 
-setTimeout(() => {
-  formOverlay.classList.remove('d-none');
-}, 500);
+window.addEventListener('DOMContentLoaded', () => {
+  MenuModal.init();
 
-btnBook.addEventListener('click', () => {
-  heroOverlay.classList.toggle('active');
-  formOverlay.classList.toggle('active');
+  const heroOverlay = document.getElementById('hero-overlay');
+  const formOverlay = document.getElementById('form-overlay');
+  const btnBook = document.getElementById('btn-book');
+
+  setTimeout(() => {
+    formOverlay.classList.remove('d-none');
+  }, 500);
+
+  btnBook.addEventListener('click', () => {
+    heroOverlay.classList.toggle('active');
+    formOverlay.classList.toggle('active');
+  });
 });

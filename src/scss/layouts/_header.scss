@@ -4,7 +4,7 @@
 
 .header-wrapper {
   width: 100%;
-  min-height: 75px;
+  height: 75px;
   position: fixed;
   top: 0;
   z-index: 1000;
@@ -12,13 +12,6 @@
   padding-inline: 2rem;
   place-items: center;
   @include mixin.flexbox(space-between, center, row);
-  
-  &.glass {
-    background: rgba(0, 0, 0, 0.5);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(6.1px);
-    -webkit-backdrop-filter: blur(6.1px);
-  }
 
   @media screen and (min-width: 650px) {
     @include mixin.grid-col(2, 1);
@@ -140,10 +133,14 @@
 }
 .bars-wrapper {
   display: block;
-  color: clr.$clr-primary;
-  font-size: fonts.$fs-8;
   justify-self: end;
   @include mixin.grid-item-col(3, 4);
+
+  & button {
+    background-color: transparent;
+    color: clr.$clr-primary;
+    font-size: fonts.$fs-8;
+  }
 
   @media screen and (min-width: 650px) {
     display: none;

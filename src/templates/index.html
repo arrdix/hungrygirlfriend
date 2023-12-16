@@ -49,11 +49,44 @@
         <button type="button" id="btn-book">Book for me</button>
       </div>
       <div class="bars-wrapper">
-        <i class="fa-solid fa-bars"></i>
+        <button type="button" id="btn-menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
     </div>
   </header>
   <main>
+    <div class="menu-modal glass d-none offcanvas active" id="menu-modal">
+      <nav class="menu-wrapper">
+        <div class="book-sm-wrapper">
+          <button type="button" id="btn-sm-book">BOOK FOR ME</button>
+        </div>
+        <a href="#home">HOME</a>
+        <a href="">RESTAURANT</a>
+        <a href="">FAVORITE</a>
+        <button type="button" class="btn-dropdown">
+          <p>ABOUT</p>
+          <i class="fa-solid fa-caret-down"></i>
+        </button>
+        <div class="dropdown-items">
+          <a href="">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a href="">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
+      </nav>
+    </div>
     <div class="hero-wrapper" id="home">
       <img src="images/heros/hero-image_1.jpg" class="hero-image grayscale" alt="hero-image">
       <div class="hero-overlay disposable" id="hero-overlay">
