@@ -6,9 +6,9 @@ import '../scss/styles.scss';
 // Import all of Bootstrap's JS
 import * as bootstrap from 'bootstrap';
 
-import { MenuModal } from './MenuModal';
-import { BookingForm } from './BookingForm';
-import { AppHeader } from './AppHeader';
+import { MenuModal } from './sections/MenuModal';
+import { BookingForm } from './sections/BookingForm';
+import { AppHeader } from './sections/AppHeader';
 
 window.addEventListener('DOMContentLoaded', () => {
   MenuModal.init();
