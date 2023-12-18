@@ -4,30 +4,33 @@ export const MenuModal = {
   },
 
   initialListener() {
-    const btnMenu = document.getElementById('btn-menu');
-    const menuModal = document.getElementById('menu-modal');
-    const btnSmBook = document.getElementById('btn-sm-book');
-    const heroOverlay = document.getElementById('hero-overlay');
-    const formOverlay = document.getElementById('form-overlay');
+    setTimeout(() => {
+      disposeMenuModal();
+    }, 500);
 
     document.querySelectorAll('.menu-wrapper a').forEach((link) => {
       link.addEventListener('click', () => {
-        menuModal.classList.toggle('active');
+        disposeMenuModal();
       });
     });
 
-    btnMenu.addEventListener('click', () => {
-      menuModal.classList.toggle('active');
+    document.getElementById('btn-menu').addEventListener('click', () => {
+      disposeMenuModal();
     });
 
-    btnSmBook.addEventListener('click', () => {
+    document.getElementById('btn-sm-book').addEventListener('click', () => {
+      const menuModal = document.getElementById('menu-modal');
+      const heroOverlay = document.getElementById('hero-overlay');
+      const formOverlay = document.getElementById('form-overlay');
+
       menuModal.classList.toggle('active');
       heroOverlay.classList.toggle('active');
       formOverlay.classList.toggle('active');
     });
 
-    setTimeout(() => {
-      menuModal.classList.remove('d-none');
-    }, 500);
+    function disposeMenuModal() {
+      const menuModal = document.getElementById('menu-modal');
+      menuModal.classList.toggle('active');
+    }
   },
 };
