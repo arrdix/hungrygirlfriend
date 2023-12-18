@@ -22,5 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
   btnBook.addEventListener('click', () => {
     heroOverlay.classList.toggle('active');
     formOverlay.classList.toggle('active');
+
+    window.location.href = '#home';
   });
 });

@@ -10,6 +10,12 @@ export const MenuModal = {
     const heroOverlay = document.getElementById('hero-overlay');
     const formOverlay = document.getElementById('form-overlay');
 
+    document.querySelectorAll('.menu-wrapper a').forEach((link) => {
+      link.addEventListener('click', () => {
+        menuModal.classList.toggle('active');
+      });
+    });
+
     btnMenu.addEventListener('click', () => {
       menuModal.classList.toggle('active');
     });
