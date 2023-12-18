@@ -7,9 +7,11 @@ import '../scss/styles.scss';
 import * as bootstrap from 'bootstrap';
 
 import { MenuModal } from './MenuModal';
+import { BookingForm } from './BookingForm';
 
 window.addEventListener('DOMContentLoaded', () => {
   MenuModal.init();
+  BookingForm.init();
 
   const heroOverlay = document.getElementById('hero-overlay');
   const formOverlay = document.getElementById('form-overlay');
