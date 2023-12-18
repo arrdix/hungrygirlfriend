@@ -89,12 +89,20 @@
   }
 
   & .dropdown-items {
-    // visibility: hidden;
     position: absolute;
+    opacity: 0;
+    transform: translateX(-15%);
+    transition: opacity .3s ease, transform .3s ease;
     top: 0;
     left: 100%;
     gap: .5rem;
     @include mixin.flexbox(center, center, row);
+
+    &.show {  
+      opacity: 1;
+      transform: translateX(0);
+      transition: opacity .3s ease, transform .3s ease;
+    }
 
     & a {
       font-size: fonts.$fs-7;

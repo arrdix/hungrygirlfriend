@@ -8,23 +8,10 @@ import * as bootstrap from 'bootstrap';
 
 import { MenuModal } from './MenuModal';
 import { BookingForm } from './BookingForm';
+import { AppHeader } from './AppHeader';
 
 window.addEventListener('DOMContentLoaded', () => {
   MenuModal.init();
   BookingForm.init();
-
-  const heroOverlay = document.getElementById('hero-overlay');
-  const formOverlay = document.getElementById('form-overlay');
-  const btnBook = document.getElementById('btn-book');
-
-  setTimeout(() => {
-    formOverlay.classList.remove('d-none');
-  }, 500);
-
-  btnBook.addEventListener('click', () => {
-    heroOverlay.classList.toggle('active');
-    formOverlay.classList.toggle('active');
-
-    window.location.href = '#home';
-  });
+  AppHeader.init();
 });
