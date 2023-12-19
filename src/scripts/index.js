@@ -9,9 +9,11 @@ import * as bootstrap from 'bootstrap';
 import { MenuModal } from './sections/MenuModal';
 import { BookingForm } from './sections/BookingForm';
 import { AppHeader } from './sections/AppHeader';
+import { Restaurant } from './sections/Restaurant';
 
 window.addEventListener('DOMContentLoaded', () => {
   MenuModal.init();
   BookingForm.init();
   AppHeader.init();
+  Restaurant.init();
 });

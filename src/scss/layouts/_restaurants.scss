@@ -10,7 +10,7 @@
   height: 100%;
   object-fit: cover;
   transform: scale(1.05);
-  filter: brightness(25%) grayscale(100%) blur(5px);
+  filter: brightness(50%) grayscale(100%) blur(0);
   transition: transform .3s ease-in-out, filter .3s ease-in-out;
 }
 .box-wrapper {
@@ -40,6 +40,26 @@
   position: relative;
   overflow: hidden;
   margin-bottom: .5rem;
+
+    &:hover .restaurant-image {
+      transform: scale(1);
+      filter: brightness(100%);
+      transition: transform .3s ease-in-out, filter .3s ease-in-out;
+    }
+
+    &:hover .box-overlay {
+      opacity: 0;
+      transition: opacity .3s ease-in-out;
+    }
+
+    &:hover .action-overlay {
+      transform: translateY(0);
+      transition: transform .3s ease .3s;
+    }
+  
+    &:hover {
+      cursor: pointer;
+    }
 
   @media screen and (min-width: 650px) {
     margin-bottom: 0;
@@ -209,130 +229,122 @@
   @include mixin.flexbox(center, center, column);
 
   // normal box
-  & .box-tag {
-    padding-block: .5rem;
-    padding-inline: 1rem;
-    margin-bottom: .5rem;
-    border-radius: 5px;
-    gap: .5rem;
-    @include mixin.flexbox(start, center, row);
-
-    & p {
-      color: clr.$clr-primary;
-      font-size: fonts.$fs-1;
-      font-weight: fonts.$fw-medium;
-    }
-
-    & .fa-utensils {
-      color: clr.$clr-success;
-    }
-  }
-
   & .box-title {
     font-size: fonts.$fs-8;
-    line-height: auto;
     font-weight: 700;
-
-    @media screen and (min-width: 650px) {
-    font-size: fonts.$fs-9;
-    line-height: 2.5rem;
-    }
   }
 
   & .box-city {
     font-size: fonts.$fs-7;
     margin-bottom: 1rem;
-
-    @media screen and (min-width: 650px) {
-      font-size: fonts.$fs-8;
-      margin-bottom: 2rem;
-    }
-  }
-
-  & .box-description {
-    font-size: fonts.$fs-4;
-    margin-bottom: 1rem;
-
-    @media screen and (min-width: 650px) {
-      font-size: fonts.$fs-6;
-      margin-bottom: 2rem;
-    }
   }
 
   & .box-star-wrapper {
-    font-size: fonts.$fs-4;
-    margin-bottom: .5rem;
+    margin-bottom: .25rem;
     gap: .5rem;
     @include mixin.flexbox(center, center, row);
 
-    & .fa-star {
+    & .fa-star, .fa-star-half-stroke {
+      font-size: fonts.$fs-6;
       color: clr.$clr-golden;
-    }
-
-    & .fa-star-half-stroke {
-      color: clr.$clr-golden;
-    }
-
-    @media screen and (min-width: 650px) {
-      font-size: fonts.$fs-7;
-      gap: 1rem;
     }
   }
 
   & .box-rating {
     font-size: fonts.$fs-7;
+  }
 
-    @media screen and (min-width: 650px) {
+  // big box
+  &.big {
+    & .box-tag {
+      margin-bottom: .5rem;
+      gap: .5rem;
+      @include mixin.flexbox(start, center, row);
+
+      & p {
+        padding-block: .5rem;
+        padding-inline: 1rem;
+        border-radius: 5px;
+        background-color: clr.$clr-primary;
+        color: clr.$clr-dark;
+        font-size: fonts.$fs-1;
+        font-weight: fonts.$fw-medium;
+      }
+
+      & .fa-utensils {
+        color: clr.$clr-success;
+      }
+    }
+
+    & .box-title {
       font-size: fonts.$fs-8;
+      line-height: auto;
+      font-weight: 700;
+
+      @media screen and (min-width: 650px) {
+      font-size: fonts.$fs-9;
+      line-height: 2.5rem;
+      }
+    }
+
+    & .box-city {
+      font-size: fonts.$fs-7;
+      margin-bottom: 1rem;
+
+      @media screen and (min-width: 650px) {
+        font-size: fonts.$fs-8;
+        margin-bottom: 2rem;
+      }
+    }
+
+    & .box-star-wrapper {
+      margin-bottom: 1rem;
+      gap: .5rem;
+      @include mixin.flexbox(center, center, row);
+
+      & .fa-star, .fa-star-half-stroke {
+        font-size: fonts.$fs-8;
+        color: clr.$clr-golden;
+      }
+
+      @media screen and (min-width: 650px) {
+        font-size: fonts.$fs-7;
+        gap: 1rem;
+      }
+    }
+
+    & .box-rating {
+      font-size: fonts.$fs-7;
+
+      @media screen and (min-width: 650px) {
+        font-size: fonts.$fs-8;
+      }
     }
   }
+}
+.action-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  background-color: rgba($color: black, $alpha: .6);
+  transform: translateY(-100%);
+  transition: transform .3s ease;
+  z-index: 2;
+  @include mixin.flexbox(space-between, center, row);
   
-  // small box
-  & .box-small-title {
-    font-size: fonts.$fs-8;
-    font-weight: 700;
-  }
-
-  & .box-small-city {
-    font-size: fonts.$fs-7;
-    margin-bottom: 1rem;
-  }
-
-  & .box-small-description {
+  & h3, i {
     font-size: fonts.$fs-4;
-    margin-bottom: 1rem;
+    color: clr.$clr-primary;
   }
 
-  & .box-small-star-wrapper {
-    font-size: fonts.$fs-4;
-    margin-bottom: .5rem;
-    gap: .5rem;
-    @include mixin.flexbox(center, center, row);
-
-    & .fa-star {
-      color: clr.$clr-golden;
+  &.big {
+    & h3, i {
+      font-size: fonts.$fs-7;
     }
-
-    & .fa-star-half-stroke {
-      color: clr.$clr-golden;
-    }
-  }
-
-  & .box-small-rating {
-    font-size: fonts.$fs-7;
-  }
-
-  // box overlay effect
-  &:hover + .restaurant-image {
-    transform: scale(1);
-    filter: brightness(100%);
-    transition: transform .3s ease-in-out, filter .3s ease-in-out;
-  }
-
-  &:hover {
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
   }
 }
 .small-label {

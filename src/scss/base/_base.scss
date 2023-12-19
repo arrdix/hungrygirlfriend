@@ -26,6 +26,8 @@ button {
 a,
 button {
   text-decoration: none;
+  background-color: transparent;
+  border: 0;
 
   &:hover {
     cursor: pointer;
