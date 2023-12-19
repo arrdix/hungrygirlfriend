@@ -1,6 +1,9 @@
+import { DataSource } from '../data/dataSource';
+
 export const BookingForm = {
   init() {
     this.initialListener();
+    this.populateRestaurant();
   },
 
   initialListener() {
@@ -81,5 +84,25 @@ export const BookingForm = {
     checkOnUserInput(inputRestaurant, 'restaurant');
     checkOnUserSubmit(inputNote, 'note');
     checkOnUserInput(inputNote, 'note');
+  },
+
+  async populateRestaurant() {
+    try {
+      const response = await DataSource.getData();
+      populateToDropdown(response.data.restaurants);
+    } catch (error) {
+      window.alert(error.message);
+    }
+
+    function populateToDropdown(restaurants) {
+      restaurants.forEach((restaurant) => {
+        const dropdownItem = document.createElement('option');
+        dropdownItem.setAttribute('value', `${restaurant.name}`);
+        dropdownItem.textContent = `${restaurant.name}`;
+
+        const inputRestaurant = document.getElementById('input-restaurant');
+        inputRestaurant.append(dropdownItem);
+      });
+    }
   },
 };
