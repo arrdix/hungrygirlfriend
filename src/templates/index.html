@@ -113,26 +113,43 @@
           <p class="message-subtitle">She's mad, isn't she?</p>
           <p class="message-content">I'm praying for your life, pal.</p>
         </div>
-        <form action="" class="form-wrapper">
+        <form action="" class="form-wrapper" id="booking-form">
           <div class="input-wrapper">
-            <label for="name">Name</label>
-            <input type="text" name="name">
+            <div class="input-header">
+              <label for="name">Name</label>
+              <p class="name-validation form-validation good d-none">Looks good!</p>
+              <p class="name-validation form-validation bad d-none">Please provide name with more than 4 characters</p>
+            </div>
+            <input type="text" name="name" id="input-name">
           </div>
           <div class="input-wrapper">
-            <label for="date">Date</label>
-            <input type="date" name="date" class="date">
+            <div class="input-header">
+              <label for="date">Date</label>
+              <p class="date-validation form-validation good d-none">Looks good!</p>
+              <p class="date-validation form-validation bad d-none">Please provide a valid date..</p>
+            </div>
+            <input type="date" name="date" class="date" id="input-date">
           </div>
           <div class="input-wrapper">
-            <label for="restaurant">Restaurant</label>
-            <select name="dropdown" class="dropdown">
+            <div class="input-header">
+              <label for="restaurant">Restaurant</label>
+              <p class="restaurant-validation form-validation good d-none">Looks good!</p>
+              <p class="restaurant-validation form-validation bad d-none">Please select a valid restaurant.</p>
+            </div>
+            <select name="dropdown" class="dropdown" id="input-restaurant">
+              <option value="default">Choose Restaurant</option>
               <option value="option1">Option 1</option>
               <option value="option2">Option 2</option>
               <option value="option3">Option 3</option>
             </select>
           </div>
           <div class="input-wrapper">
-            <label for="note">Note</label>
-            <input type="textarea" name="note" class="note">
+            <div class="input-header">
+              <label for="note">Note</label>
+              <p class="note-validation form-validation good d-none">Looks good!</p>
+              <p class="note-validation form-validation bad d-none">Please provide note with more than 4 characters.</p>
+            </div>
+            <input type="textarea" name="note" class="note" id="input-note">
           </div>
           <div class="input-wrapper">
             <input type="submit" name="note" class="submit" value="Book Now">

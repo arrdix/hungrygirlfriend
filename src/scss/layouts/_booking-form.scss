@@ -1,0 +1,87 @@
+@use '../abstracts/mixin' as mixin;
+@use '../abstracts/colors' as clr;
+@use '../abstracts/fonts' as fonts;
+
+.form-wrapper {
+  padding: 2rem;
+  padding-top: 1rem;
+
+  @media screen and (min-width: 650px) {
+    padding: 2rem 2rem 3rem 0;
+    @include mixin.grid-item-col(2, 4);
+    @include mixin.grid-item-row(2, 3);
+    @include mixin.flexbox(center, start, column);
+  }
+}
+.input-wrapper {
+  width: 100%;
+  margin-bottom: .5rem;
+  gap: .25rem;
+  @include mixin.flexbox(center, start, column);
+
+  & .input-header {
+    width: 100%;
+    @include mixin.flexbox(space-between, center, row);
+
+    & label {
+      font-size: fonts.$fs-1;
+      color: clr.$clr-primary;
+    }
+
+    & .form-validation {
+      font-weight: fonts.$fw-medium;
+      font-size: fonts.$fs-1;
+
+      &.good {
+        color: clr.$clr-good;  
+      }
+
+      &.bad {
+        color: clr.$clr-bad; 
+      }
+    }
+  }
+
+  & input, .dropdown {
+    width: 100%;
+    padding: .5rem;
+    background-color: transparent;
+    border: 1px solid clr.$clr-primary;
+    border-radius: 5px;
+    color: clr.$clr-primary;
+    font-size: fonts.$fs-2;
+  }
+
+  & .date {
+    width: auto;
+  }
+
+  .dropdown option {
+    background-color: clr.$clr-dark;
+    color: clr.$clr-primary;
+    font-size: fonts.$fs-2;
+  }
+
+  select option{
+    background-color: #82caff;
+    }
+
+  & .note {
+    padding: .5rem;
+    height: 50px;
+  }
+
+  & .submit {
+    width: 40%;
+    margin-top: .5rem;
+    padding-block: .5rem;
+    padding-inline: 2rem;
+    align-self: flex-end;
+
+    &:hover {
+      cursor: pointer;
+      border: 1px solid clr.$clr-hover;
+      color: clr.$clr-hover;
+    }
+  }
+}
