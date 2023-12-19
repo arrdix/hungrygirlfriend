@@ -4,10 +4,6 @@ export const MenuModal = {
   },
 
   initialListener() {
-    setTimeout(() => {
-      disposeMenuModal();
-    }, 500);
-
     document.querySelectorAll('.menu-wrapper a').forEach((link) => {
       link.addEventListener('click', () => {
         disposeMenuModal();

@@ -3,48 +3,53 @@
 @use '../abstracts/fonts' as fonts;
 
 .menu-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  margin-top: 75px;
-  padding: 2rem;
-  border-top: 2px solid rgba($color: clr.$clr-primary, $alpha: .3);
-  z-index: 1000;
-}
-.menu-wrapper {
-  gap: .5rem;
-  @include mixin.flexbox(center, center, column);
+  display: none;
 
-  & .book-sm-wrapper {
-
-    & button {
-      color: clr.$clr-primary;
-      margin-bottom: .5rem;
-      font-size: fonts.$fs-6;
-      font-weight: fonts.$fw-bold;
-      background-color: transparent;
+  @media screen and (max-width: 650px) {
+    position: fixed;
+    display: block  ;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    margin-top: 75px;
+    padding: 2rem;
+    border-top: 2px solid rgba($color: clr.$clr-primary, $alpha: .3);
+    z-index: 1000;
+  }
+  .menu-wrapper {
+    gap: 1rem;
+    @include mixin.flexbox(center, center, column);
+  
+    & .book-sm-wrapper {
+  
+      & button {
+        color: clr.$clr-primary;
+        margin-bottom: .5rem;
+        font-size: fonts.$fs-6;
+        font-weight: fonts.$fw-bold;
+        background-color: transparent;
+      }
     }
-  }
-
-  & a {
-    font-size: fonts.$fs-5;
-    font-weight: fonts.$fw-medium;
-    color: clr.$clr-primary;
-  }
-
-  & .btn-dropdown {
-    font-size: fonts.$fs-5;
-  }
-
-  & .dropdown-items {
-    gap: .5rem;
-    @include mixin.flexbox(center, center, row);
-
+  
     & a {
+      font-size: fonts.$fs-5;
+      font-weight: fonts.$fw-medium;
       color: clr.$clr-primary;
-      font-size: fonts.$fs-7;
+    }
+  
+    & .btn-dropdown {
+      font-size: fonts.$fs-5;
+    }
+  
+    & .dropdown-items {
+      gap: 1rem;
+      @include mixin.flexbox(center, center, row);
+  
+      & a {
+        color: clr.$clr-primary;
+        font-size: fonts.$fs-8;
+      }
     }
   }
 }

@@ -7,7 +7,7 @@
   height: 75px;
   position: fixed;
   top: 0;
-  z-index: 1000;
+  z-index: 10;
   padding-block: 1.5rem;
   padding-inline: 2rem;
   place-items: center;
@@ -19,6 +19,7 @@
 
   @media screen and (min-width: 1000px) {
     @include mixin.grid-col(3, 1);
+    @include mixin.grid-row(2, 1);
     padding-block: 1rem;
     padding-inline: 5rem;
   }
@@ -45,10 +46,11 @@
 
   @media screen and (min-width: 650px) {
     gap: 1rem;
+    justify-self: end;
     @include mixin.grid-item-col(2, 3);
     @include mixin.flexbox(center, center, row);
 
-    & a {
+    & a, .btn-book {
       text-decoration: none;
       color: clr.$clr-primary;
       font-weight: fonts.$fw-medium;
@@ -57,6 +59,14 @@
       &:hover {
         color: clr.$clr-hover;
       }
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    justify-self: center;
+
+    & .btn-book {
+      display: none !important;
     }
   }
 }
@@ -78,37 +88,42 @@
   }
 }
 .nav-dropdown {
-  position: relative;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  margin-top: 75px;
+  padding: .5rem;
+  padding-inline: 2rem;
+  opacity: 0;
+  transform: translateY(-250%);
+  transition: opacity .2s ease, transform .5s ease;
+  border-top: 1px solid rgba($color: clr.$clr-primary, $alpha: .3);
   gap: .5rem;
-  @include mixin.flexbox(center, start, row);
+  z-index: 9;
+  @include mixin.grid-item-col(1, 4);
+  @include mixin.grid-item-row(2, 3);
+  @include mixin.flexbox(flex-end, center, row);
 
-  &::after {
-    content: "";
-    display: block;
-    height: 1rem;
+  @media screen and (min-width: 650px) {
+    &.show {  
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity  1s ease, transform .5s ease;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    @include mixin.flexbox(center, center, row);
   }
 
   & .dropdown-items {
-    position: absolute;
-    opacity: 0;
-    transform: translateX(-15%);
-    transition: opacity .3s ease, transform .3s ease;
-    top: 0;
-    left: 100%;
-    gap: .5rem;
+    gap: 1rem;
     @include mixin.flexbox(center, center, row);
 
-    &.show {  
-      opacity: 1;
-      transform: translateX(0);
-      transition: opacity .3s ease, transform .3s ease;
-    }
-
     & a {
-      font-size: fonts.$fs-7;
+      color: clr.$clr-primary;
+      font-size: fonts.$fs-8;
       font-weight: fonts.$fw-light;
-      gap: .5rem;
-      @include mixin.flexbox(center, center, row);
     }
   }  
 }

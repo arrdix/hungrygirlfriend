@@ -5,10 +5,10 @@
 .hero-wrapper {
   position: relative;
   overflow: hidden;
+  margin-bottom: .5rem;
   @include mixin.full-screen;
 }
 .hero-overlay {
-  // visibility: hidden;
   position: absolute;
   top: 0%;
   left: 0%;
@@ -60,9 +60,19 @@
   font-weight: fonts.$fw-light;
   font-size: fonts.$fs-5;
   margin-right: .25rem;
+  gap: .5rem;
+  @include mixin.flexbox(center, center, row);
 
   & a {
     color: clr.$clr-primary;
+    font-size: fonts.$fs-9;
+    transform: translateY(0);
+      transition: transform .3s ease;
+
+    &:hover {
+      transform: translateY(15%);
+      transition: transform .3s ease;
+    }
   }
 
   @media screen and (min-width: 650px) {

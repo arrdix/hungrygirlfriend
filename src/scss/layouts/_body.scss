@@ -29,8 +29,16 @@ input {
   backdrop-filter: blur(6.1px);
   -webkit-backdrop-filter: blur(6.1px);
 
+  transform: translateY(0);
+  transition: transform .3s ease;
+
   font-size: fonts.$fs-8;
   color: clr.$clr-primary;
+
+  &:hover {
+    transform: translateY(-15%);
+    transition: transform .3s ease;
+  }
 
   @media screen and (min-width: 650px) {
     margin-inline: 2rem;
