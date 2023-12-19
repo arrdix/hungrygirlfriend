@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
   integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
   crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>Restaurant Apps</title>
+  <title>HUNGRYGIRLFRIEND</title>
 </head>
 <body>
   <header>
@@ -36,19 +36,19 @@
     </div>
     <div class="nav-dropdown glass" id="nav-dropdown">
       <div class="dropdown-items" id="dropdown-items">
-        <a href="https://www.linkedin.com/in/yudistiraardi/">
+        <a href="https://www.linkedin.com/in/yudistiraardi/" aria-label="linkedin">
           <i class="fa-brands fa-linkedin"></i>
         </a>
-        <a href="https://www.instagram.com/arrdix/">
+        <a href="https://www.instagram.com/arrdix/" aria-label="instagram">
           <i class="fa-brands fa-instagram"></i>
         </a>
-        <a href="https://www.github.com/arrdix/">
+        <a href="https://www.github.com/arrdix/" aria-label="github">
           <i class="fa-brands fa-github"></i>
         </a>
-        <a href="https://api.whatsapp.com/send?phone=6281903864037">
+        <a href="https://api.whatsapp.com/send?phone=6281903864037" aria-label="whatsapp">
           <i class="fa-brands fa-whatsapp"></i>
         </a>
-        <a href="mailto:mail.ardix@gmail.com">
+        <a href="mailto:mail.ardix@gmail.com" aria-label="email">
           <i class="fa-solid fa-envelope"></i>
         </a>
       </div>
@@ -63,24 +63,23 @@
         <a href="#home">HOME</a>
         <a href="#restaurant">RESTAURANT</a>
         <a href="">FAVORITE</a>
-        <button type="button" class="btn-dropdown" id="btn-dropdown">
+        <button type="button" class="btn-dropdown">
           <p>ABOUT</p>
-          <i class="fa-solid fa-caret-down"></i>
         </button>
         <div class="dropdown-items">
-          <a href="https://www.linkedin.com/in/yudistiraardi/">
+          <a href="https://www.linkedin.com/in/yudistiraardi/" aria-label="linkedin">
             <i class="fa-brands fa-linkedin"></i>
           </a>
-          <a href="https://www.instagram.com/arrdix/">
+          <a href="https://www.instagram.com/arrdix/" aria-label="instagram">
             <i class="fa-brands fa-instagram"></i>
           </a>
-          <a href="https://www.github.com/arrdix/">
+          <a href="https://www.github.com/arrdix/" aria-label="github">
             <i class="fa-brands fa-github"></i>
           </a>
-          <a href="https://api.whatsapp.com/send?phone=6281903864037">
+          <a href="https://api.whatsapp.com/send?phone=6281903864037" aria-label="whatsapp">
             <i class="fa-brands fa-whatsapp"></i>
           </a>
-          <a href="mailto:mail.ardix@gmail.com">
+          <a href="mailto:mail.ardix@gmail.com" aria-label="email">
             <i class="fa-solid fa-envelope"></i>
           </a>
         </div>
@@ -94,7 +93,7 @@
           <h2 class="hero-title">DON'T KNOW WHERE TO GO?</h2>
           <h2 class="hero-tagline">
             Well, let me help you, fella.
-              <a href="#restaurant">
+              <a href="#restaurant" aria-label="show restaurant">
                 <i class="fa-solid fa-angle-down"></i>
               </a>
           </h2>
@@ -103,10 +102,10 @@
       <div class="form-overlay disposable active d-none" id="form-overlay">
         <div class="form-title-wrapper">
           <p class="form-title">Book Restaurant</p>
-          <a href="#" class="form-back" id="btn-back">
+          <button type="button" class="form-back" id="btn-back">
             <i class="fa-solid fa-angle-left"></i>
             <p class="form-back-label">Back</p>
-          </a>
+          </button>
         </div>
         <div class="message-wrapper">
           <p class="message-title">Uh-oh,</p>
@@ -120,15 +119,15 @@
               <p class="name-validation form-validation good d-none">Looks good!</p>
               <p class="name-validation form-validation bad d-none">Please provide name with more than 4 characters</p>
             </div>
-            <input type="text" name="name" id="input-name">
+            <input type="text" name="name" id="input-name" aria-label="input name">
           </div>
           <div class="input-wrapper">
             <div class="input-header">
               <label for="date">Date</label>
               <p class="date-validation form-validation good d-none">Looks good!</p>
-              <p class="date-validation form-validation bad d-none">Please provide a valid date..</p>
+              <p class="date-validation form-validation bad d-none">Please provide a valid date.</p>
             </div>
-            <input type="date" name="date" class="date" id="input-date">
+            <input type="date" name="date" class="date" id="input-date" aria-label="input date">
           </div>
           <div class="input-wrapper">
             <div class="input-header">
@@ -146,7 +145,7 @@
               <p class="note-validation form-validation good d-none">Looks good!</p>
               <p class="note-validation form-validation bad d-none">Please provide note with more than 4 characters.</p>
             </div>
-            <input type="textarea" name="note" class="note" id="input-note">
+            <input type="textarea" name="note" class="note" id="input-note" aria-label="input note">
           </div>
           <div class="input-wrapper">
             <input type="submit" name="note" class="submit" value="Book Now">
@@ -162,38 +161,40 @@
   <footer>
     <div class="footer-wrapper">
       <a href="#home">
-        <img src="images/logo-white.png" class="footer-logo" alt="">
+        <img src="images/logo-white.png" class="footer-logo" alt="logo">
       </a>
       <div class="footer-connect-wrapper">
-        <a href="https://www.linkedin.com/in/yudistiraardi/">
+        <a href="https://www.linkedin.com/in/yudistiraardi/" aria-label="linkedin">
           <i class="fa-brands fa-linkedin"></i>
         </a>
-        <a href="https://www.instagram.com/arrdix/">
+        <a href="https://www.instagram.com/arrdix/" aria-label="instagram">
           <i class="fa-brands fa-instagram"></i>
         </a>
-        <a href="https://www.github.com/arrdix/">
+        <a href="https://www.github.com/arrdix/" aria-label="github">
           <i class="fa-brands fa-github"></i>
         </a>
-        <a href="https://api.whatsapp.com/send?phone=6281903864037">
+        <a href="https://api.whatsapp.com/send?phone=6281903864037" aria-label="whatsapp">
           <i class="fa-brands fa-whatsapp"></i>
         </a>
-        <a href="mailto:mail.ardix@gmail.com">
+        <a href="mailto:mail.ardix@gmail.com" aria-label="email">
           <i class="fa-solid fa-envelope"></i>
         </a>
       </div>
       <div class="footer-nav-wrapper">
         <a href="#home">HOME</a>
-        <a href="">RESTAURANT</a>
-        <a href="">FAVORITE</a>
-        <a href="">ABOUT</a>
-        <a href="">BOOK</a>
+        <a href="#restaurant">RESTAURANT</a>
+        <a href="#">FAVORITE</a>
+        <button type="button" class="btn-book">BOOK</button>
+        <button type="button" class="btn-dropdown">
+          ABOUT
+        </button>
       </div>
     </div>
     <div class="copyright-wrapper">
       <p>&copy; 2023 HUNGRYGIRLFRIEND | Made with ♥ by Yudistira Ardi</p>
     </div>
   </footer>
-  <a href="#" class="back-to-top">
+  <a href="#" class="back-to-top" aria-label="back to top">
     <i class="fa-solid fa-angles-up"></i>
   </a>
 </body>

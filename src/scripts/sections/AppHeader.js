@@ -9,9 +9,11 @@ export const AppHeader = {
       formOverlay.classList.remove('d-none');
     }, 500);
 
-    document.getElementById('btn-dropdown').addEventListener('click', () => {
-      const navDropdown = document.getElementById('nav-dropdown');
-      navDropdown.classList.toggle('show');
+    document.querySelectorAll('.btn-dropdown').forEach((btnDropdown) => {
+      btnDropdown.addEventListener('click', () => {
+        const navDropdown = document.getElementById('nav-dropdown');
+        navDropdown.classList.toggle('show');
+      });
     });
 
     document.querySelectorAll('.btn-book').forEach((btnBook) => {

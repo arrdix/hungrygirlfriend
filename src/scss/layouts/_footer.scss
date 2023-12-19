@@ -36,9 +36,10 @@
   gap: 1rem;
   @include mixin.flexbox(center, center, row);
 
-  & a {
+  & a, button {
     text-decoration: none;
     font-size: fonts.$fs-1;
+    font-weight: fonts.$fw-normal;
     color: clr.$clr-primary;
 
     @media screen and (min-width: 650px) {

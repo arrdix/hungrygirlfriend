@@ -52,7 +52,7 @@ export const BookingForm = {
       const goodNameValidation = document.querySelector(`.${inputClass}-validation.good`);
       const badNameValidation = document.querySelector(`.${inputClass}-validation.bad`);
 
-      if (input.value.length <= 4 || input.value == '' || input.value === 'default') {
+      if (input.value.length < 4 || input.value == '' || input.value === 'default') {
         badNameValidation.classList.remove('d-none');
         goodNameValidation.classList.add('d-none');
       } else {

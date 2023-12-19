@@ -19,13 +19,14 @@ export const Restaurant = {
     restaurants.forEach((restaurant) => {
       const box = document.createElement('button');
       box.setAttribute('type', 'button');
+      box.setAttribute('aria-label', 'show restaurant detail');
       box.classList.add('box', `box-${boxId}`, `resId-${restaurant.id}`);
 
       if (boxId === 1 || boxId === 7) {
         box.innerHTML = `
           <div class="action-overlay big">
             <h3 class="box-title">${restaurant.name}</h3>
-            <button type="button">
+            <button type="button" aria-label="show ${restaurant.name} detail">
               <i class="fa-solid fa-expand"></i>
             </button>
           </div>
@@ -43,14 +44,14 @@ export const Restaurant = {
               <i class="fa-solid fa-star-half-stroke"></i>
             </div>
           </div>
-          <img src="${restaurant.pictureId}" class="restaurant-image" alt="">
+          <img src="${restaurant.pictureId}" class="restaurant-image" alt="${restaurant.name}">
         `;
       } else {
         box.innerHTML = `
           <div class="action-overlay">
             <h3 class="box-title">${restaurant.name}</h3>
             <button type="button">
-              <i class="fa-solid fa-expand"></i>
+              <i class="fa-solid fa-expand" aria-label="show ${restaurant.name} detail"></i>
             </button>
           </div>
           <div class="box-overlay">
@@ -64,7 +65,7 @@ export const Restaurant = {
               <i class="fa-solid fa-star-half-stroke"></i>
             </div>
           </div>
-          <img src="${restaurant.pictureId}" class="restaurant-image" alt="">
+          <img src="${restaurant.pictureId}" class="restaurant-image" alt="${restaurant.name}"">
         `;
       }
 
