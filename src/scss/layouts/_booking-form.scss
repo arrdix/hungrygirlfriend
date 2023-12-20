@@ -2,6 +2,130 @@
 @use '../abstracts/colors' as clr;
 @use '../abstracts/fonts' as fonts;
 
+.form-overlay {
+  position: absolute;
+  width: 90%;
+  top: 20%;
+  left: 5%;
+
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.1px);
+  -webkit-backdrop-filter: blur(6.1px);
+
+  grid-template-rows: 75px 1fr 1fr;
+
+  @media screen and (min-width: 650px) {
+    width: 80%;
+    left: 10%;
+    grid-template-rows: 75px 1fr;
+    @include mixin.grid-col(3, 1);
+  }
+
+  @media screen and (min-width: 800px) {
+    width: 70%;
+    left: 15%;
+  }
+
+  @media screen and (min-width: 1000px) {
+    width: 65%;
+    left: 17.5%;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 60%;
+    left: 20%;
+  }
+}
+.form-title-wrapper {
+  padding: 1rem;
+  padding-inline: 3rem;
+  border-bottom: 1px solid rgba($color: clr.$clr-primary, $alpha: .2);
+  @include mixin.grid-item-col(1, 4);
+  @include mixin.grid-item-row(1, 2);
+  @include mixin.flexbox(space-between, center, row);
+
+  & .form-title {
+    font-size: fonts.$fs-6;
+    font-weight: fonts.$fw-bolder;
+    color: clr.$clr-primary;
+  }
+
+  & .form-back {
+    color: clr.$clr-primary;
+    text-decoration: none;
+    @include mixin.flexbox(center, center, row);
+
+    & .form-back-label {
+      font-size: fonts.$fs-3;
+      font-weight: fonts.$fw-light;
+      color: clr.$clr-primary;
+      margin-left: .25rem;
+    }
+
+    & .fa-angle-left {
+      font-size: fonts.$fs-3;
+    }
+
+    @media screen and (min-width: 650px) {
+      & .form-back-label {
+        font-size: fonts.$fs-6;
+        margin-left: .5rem;
+      }
+    }
+  }
+}
+.message-wrapper {
+  padding: 1rem;
+  padding-bottom: 0;
+  text-align: center;
+  color: clr.$clr-primary;
+  @include mixin.grid-item-row(2, 3);
+  @include mixin.flexbox(center, center, column);
+
+  & .message-title {
+    font-size: fonts.$fs-9;
+    font-weight: fonts.$fw-bolder;
+  }
+  & .message-subtitle {
+    font-size: fonts.$fs-6;
+    font-weight: fonts.$fw-medium;
+    margin-bottom: 1rem;
+  }
+  & .message-content {
+    font-size: fonts.$fs-6;
+    font-weight: fonts.$fw-light;
+  }
+
+  @media screen and (min-width: 650px) {
+    padding: 2rem 2rem 3rem 2rem;
+    @include mixin.grid-item-col(1, 2);
+    @include mixin.grid-item-row(2, 3);
+    
+    & .message-title, .message-subtitle, .message-content {
+      transform: translateY(-25px);
+    }
+
+    & .message-title {
+      font-size: fonts.$fs-8;
+    }
+
+    & .message-subtitle, .message-content {
+      font-size: fonts.$fs-5;
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    padding: 2rem 2rem 3rem 2rem;
+    @include mixin.grid-item-col(1, 2);
+    @include mixin.grid-item-row(2, 3);
+    
+    & .message-title, .message-subtitle, .message-content {
+      transform: translateY(-25px);
+    }
+  }
+}
 .form-wrapper {
   padding: 2rem;
   padding-top: 1rem;
