@@ -10,10 +10,12 @@ import { MenuModal } from './sections/MenuModal';
 import { BookingForm } from './sections/BookingForm';
 import { AppHeader } from './sections/AppHeader';
 import { Restaurant } from './sections/Restaurant';
+import { SmoothScrolling } from './utils/SmoothScrolling';
 
 window.addEventListener('DOMContentLoaded', () => {
   MenuModal.init();
   BookingForm.init();
   AppHeader.init();
   Restaurant.init();
+  SmoothScrolling.init();
 });
