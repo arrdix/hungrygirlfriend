@@ -10,6 +10,11 @@ export const SmoothScrolling = {
         this.initSmoothScrolling('restaurant');
       });
     });
+
+    document.querySelector('.skip-to-content').addEventListener('click', (event) => {
+      event.preventDefault();
+      this.initSmoothScrolling('restaurant');
+    });
   },
 
   initSmoothScrolling(target) {
