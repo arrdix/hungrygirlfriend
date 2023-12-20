@@ -14,6 +14,7 @@ export const SmoothScrolling = {
     document.querySelector('.skip-to-content').addEventListener('click', (event) => {
       event.preventDefault();
       this.initSmoothScrolling('restaurant');
+      document.querySelector('.box-1 .box-overlay').focus();
     });
   },
 
@@ -25,6 +26,5 @@ export const SmoothScrolling = {
       left: 0,
       top: fixedTargetPosition,
     });
-    document.querySelector('.box-1 .box-overlay').focus();
   },
 };
