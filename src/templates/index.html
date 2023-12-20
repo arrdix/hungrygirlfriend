@@ -9,6 +9,8 @@
   <title>HUNGRYGIRLFRIEND</title>
 </head>
 <body>
+  <!-- focus menggunakan method scrollTo() di utils/SmoothScrolling.js -->
+  <!-- bertujuan agar section restaurant tidak tertutup oleh header -->
   <a href="" class="skip-to-content" aria-label="skip to content">Skip to Content</a>
   <header>
     <div class="header-wrapper glass" id="header">
@@ -18,7 +20,7 @@
         </a>
       </div>
       <nav class="nav-wrapper">
-        <a href="#home" class="btn-home">HOME</a>
+        <a href="/" class="btn-home">HOME</a>
         <a href="" class="btn-restaurant">RESTAURANT</a>
         <a href="#" class="btn-favorite">FAVORITE</a>
         <button type="button" class="btn-book">BOOK</button>
@@ -61,13 +63,10 @@
         <div class="book-sm-wrapper">
           <button type="button" id="btn-sm-book">BOOK FOR ME</button>
         </div>
-        <a href="#home">HOME</a>
+        <a href="/">HOME</a>
         <a href="" class="btn-restaurant">RESTAURANT</a>
         <a href="#">FAVORITE</a>
-        <button type="button" class="btn-dropdown">
-          <p>ABOUT</p>
-        </button>
-        <div class="dropdown-items">
+        <div class="socials-items">
           <a href="https://www.linkedin.com/in/yudistiraardi/" aria-label="linkedin">
             <i class="fa-brands fa-linkedin"></i>
           </a>
@@ -161,7 +160,7 @@
   </main>
   <footer>
     <div class="footer-wrapper">
-      <a href="#home">
+      <a href="/" class="footer-logo-wrapper">
         <img src="images/logo-white.png" class="footer-logo" alt="logo">
       </a>
       <div class="footer-connect-wrapper">
@@ -182,7 +181,7 @@
         </a>
       </div>
       <div class="footer-nav-wrapper">
-        <a href="#home">HOME</a>
+        <a href="/">HOME</a>
         <a href="" class="btn-restaurant">RESTAURANT</a>
         <a href="#">FAVORITE</a>
         <button type="button" class="btn-book">BOOK</button>

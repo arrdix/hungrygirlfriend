@@ -18,20 +18,20 @@ export const Restaurant = {
     let boxId = 1;
     restaurants.forEach((restaurant) => {
       const roundedRating = Math.floor(restaurant.rating / 0.5) * 0.5;
-      const box = document.createElement('button');
-      box.setAttribute('type', 'button');
-      box.setAttribute('aria-label', 'show restaurant detail');
+      const box = document.createElement('div');
       box.classList.add('box', `box-${boxId}`, `resId-${restaurant.id}`);
 
       if (boxId === 1 || boxId === 6) {
         box.innerHTML = `
           <div class="action-overlay big">
-            <h3 class="box-title">${restaurant.name} | Rating: ${restaurant.rating} of 5</h3>
+            <h3 class="box-title">${restaurant.name} | ${
+          restaurant.rating
+        } <i class="star fa-solid fa-star"></i></h3>
             <button type="button" aria-label="show ${restaurant.name} detail">
               <i class="fa-solid fa-expand"></i>
             </button>
           </div>
-          <div class="box-overlay big">
+          <button type="button" aria-label="show ${restaurant.name} detail" class="box-overlay big">
             <div class="box-tag">
               <p>Recommended</p>
             </div>
@@ -40,24 +40,26 @@ export const Restaurant = {
             <div class="box-star-wrapper">
               ${renderStars(roundedRating)}
             </div>
-          </div>
+          </button>
           <img src="${restaurant.pictureId}" class="restaurant-image" alt="${restaurant.name}">
         `;
       } else {
         box.innerHTML = `
           <div class="action-overlay">
-            <h3 class="box-title">${restaurant.name} | Rating: ${restaurant.rating} of 5</h3>
-            <button type="button">
-              <i class="fa-solid fa-expand" aria-label="show ${restaurant.name} detail"></i>
+            <h3 class="box-title">${restaurant.name} | ${
+          restaurant.rating
+        } <i class="star fa-solid fa-star"></i></h3>
+            <button type="button" aria-label="show ${restaurant.name} detail">
+              <i class="fa-solid fa-expand"></i>
             </button>
           </div>
-          <div class="box-overlay">
+          <button type="button" aria-label="show ${restaurant.name} detail" class="box-overlay">
             <h3 class="box-title">${restaurant.name}</h3>
             <h4 class="box-city">${restaurant.city}</h4>
             <div class="box-star-wrapper">
               ${renderStars(roundedRating)}
             </div>
-          </div>
+          </button>
           <img src="${restaurant.pictureId}" class="restaurant-image" alt="${restaurant.name}"">
         `;
       }

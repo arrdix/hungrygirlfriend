@@ -13,6 +13,8 @@ import { Restaurant } from './sections/Restaurant';
 import { SmoothScrolling } from './utils/SmoothScrolling';
 
 window.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('.skip-to-content').focus();
+
   MenuModal.init();
   BookingForm.init();
   AppHeader.init();

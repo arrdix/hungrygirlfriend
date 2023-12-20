@@ -25,5 +25,6 @@ export const SmoothScrolling = {
       left: 0,
       top: fixedTargetPosition,
     });
+    document.querySelector('.box-1 .box-overlay').focus();
   },
 };

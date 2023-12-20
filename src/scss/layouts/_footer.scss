@@ -9,38 +9,45 @@
   gap: 2rem;
 
   @include mixin.flexbox(center, center, column);
-
-  & a {
-    @include mixin.flexbox(center, center, column);
-  }
 }
-.footer-logo {
-  margin-bottom: 2rem;
-  width: 250px;
+.footer-logo-wrapper {
+  min-height: 45px;
+  @include mixin.flexbox(center, center, row);
 
-  @media screen and (min-width: 650px) {
-    margin-bottom: 1rem;
-    width: 300px;
+  .footer-logo {
+    width: 250px;
+  
+    @media screen and (min-width: 650px) {
+      width: 300px;
+    }
   }
 }
 .footer-connect-wrapper {
-  gap: 1rem;
   @include mixin.flexbox(center, center, row);
 
-  & i {
-    font-size: fonts.$fs-8;
-    color: clr.$clr-primary;
+  & a {
+    width: 45px;
+    height: 45px;
+    @include mixin.flexbox(center, center, row);
+
+    & i {
+      font-size: fonts.$fs-8;
+      color: clr.$clr-primary;
+    }
   }
 }
 .footer-nav-wrapper {
-  gap: 1rem;
+  gap: .5rem;
   @include mixin.flexbox(center, center, row);
 
   & a, button {
+    min-width: 45px;
+    min-height: 45px;
     text-decoration: none;
     font-size: fonts.$fs-1;
     font-weight: fonts.$fw-normal;
     color: clr.$clr-primary;
+    @include mixin.flexbox(center, center, row);
 
     @media screen and (min-width: 650px) {
       font-size: fonts.$fs-4;

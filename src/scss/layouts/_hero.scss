@@ -12,6 +12,7 @@
   position: absolute;
   top: 0%;
   left: 0%;
+  padding-inline: 1rem;
   @include mixin.full-screen;
   @include mixin.flexbox(center, center, column);
 }
@@ -61,9 +62,11 @@
   font-size: fonts.$fs-5;
   margin-right: .25rem;
   gap: .5rem;
-  @include mixin.flexbox(center, center, row);
+  @include mixin.flexbox(center, center, column);
 
   & a {
+    width: 45px;
+    height: 45px;
     color: clr.$clr-primary;
     font-size: fonts.$fs-9;
     transform: translateY(0);

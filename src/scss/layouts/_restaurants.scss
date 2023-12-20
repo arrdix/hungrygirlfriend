@@ -41,6 +41,9 @@
   overflow: hidden;
   margin-bottom: .5rem;
 
+  @media screen and (min-width: 650px) {
+    margin-bottom: 0;
+
     &:hover .restaurant-image {
       transform: scale(1);
       filter: brightness(100%);
@@ -60,9 +63,6 @@
     &:hover {
       cursor: pointer;
     }
-
-  @media screen and (min-width: 650px) {
-    margin-bottom: 0;
   }
 }
 .box-1,
@@ -259,7 +259,7 @@
     & .box-tag {
       margin-bottom: .5rem;
       gap: .5rem;
-      @include mixin.flexbox(start, center, row);
+      @include mixin.flexbox(flex-start, center, row);
 
       & p {
         padding-block: .5rem;
@@ -337,13 +337,30 @@
   @include mixin.flexbox(space-between, center, row);
   
   & h3, i {
-    font-size: fonts.$fs-4;
+    font-size: fonts.$fs-3;
     color: clr.$clr-primary;
   }
 
   &.big {
     & h3, i {
-      font-size: fonts.$fs-7;
+      font-size: fonts.$fs-5;
+    }
+  }
+
+  & .star {
+    color: clr.$clr-golden;
+  }
+
+  @media screen and (min-width: 1000px) {
+    & h3, i {
+      font-size: fonts.$fs-4;
+      color: clr.$clr-primary;
+    }
+  
+    &.big {
+      & h3, i {
+        font-size: fonts.$fs-7;
+      }
     }
   }
 }

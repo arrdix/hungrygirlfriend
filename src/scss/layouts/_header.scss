@@ -15,30 +15,32 @@
 
   @media screen and (min-width: 650px) {
     @include mixin.grid-col(2, 1);
+    padding-block: 1rem;
+    padding-inline: 2rem;
   }
 
   @media screen and (min-width: 1000px) {
     @include mixin.grid-col(3, 1);
     @include mixin.grid-row(2, 1);
-    padding-block: 1rem;
     padding-inline: 5rem;
   }
 }
 .logo-wrapper {
   justify-self: flex-start;
   @include mixin.grid-item-col(1, 3);
-  @include mixin.flexbox(start, center, row);
+  @include mixin.flexbox(flex-start, center, row);
+
+  & a {
+    height: 45px;
+    @include mixin.flexbox(center, center, row);
+  }
 
   & .header-logo {
-    width: 225px;
+    width: 200px;
   }
 
   @media screen and (min-width: 650px) {
     @include mixin.grid-item-col(1, 2);
-
-    & .header-logo {
-      width: 200px;
-    }
   }
 }
 .nav-wrapper {
@@ -162,7 +164,12 @@
   & button {
     background-color: transparent;
     color: clr.$clr-primary;
-    font-size: fonts.$fs-8;
+    width: 45px;
+    height: 45px;
+
+    & i {
+      font-size: fonts.$fs-8;
+    }
   }
 
   @media screen and (min-width: 650px) {

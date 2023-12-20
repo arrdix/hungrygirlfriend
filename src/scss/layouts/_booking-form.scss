@@ -134,14 +134,14 @@
     padding: 2rem 2rem 3rem 0;
     @include mixin.grid-item-col(2, 4);
     @include mixin.grid-item-row(2, 3);
-    @include mixin.flexbox(center, start, column);
+    @include mixin.flexbox(center, flex-start, column);
   }
 }
 .input-wrapper {
   width: 100%;
   margin-bottom: .5rem;
   gap: .25rem;
-  @include mixin.flexbox(center, start, column);
+  @include mixin.flexbox(center, flex-start, column);
 
   & .input-header {
     width: 100%;

@@ -18,12 +18,14 @@
     z-index: 1000;
   }
   .menu-wrapper {
-    gap: 1rem;
     @include mixin.flexbox(center, center, column);
   
     & .book-sm-wrapper {
+      width: 100%;
   
       & button {
+        width: 100%;
+        height: 45px;
         color: clr.$clr-primary;
         margin-bottom: .5rem;
         font-size: fonts.$fs-6;
@@ -33,20 +35,22 @@
     }
   
     & a {
+      width: 100%;
+      height: 45px;
+      text-align: center;
       font-size: fonts.$fs-5;
       font-weight: fonts.$fw-medium;
       color: clr.$clr-primary;
+      @include mixin.flexbox(center, center, row);
     }
   
-    & .btn-dropdown {
-      font-size: fonts.$fs-5;
-    }
-  
-    & .dropdown-items {
-      gap: 1rem;
+    & .socials-items {
+      margin-top: .5rem;
       @include mixin.flexbox(center, center, row);
   
       & a {
+        width: 45px;
+        height: 45px;
         color: clr.$clr-primary;
         font-size: fonts.$fs-8;
       }
