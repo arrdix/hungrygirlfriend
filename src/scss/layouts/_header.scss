@@ -53,10 +53,13 @@
     @include mixin.flexbox(center, center, row);
 
     & a, .btn-book {
+      min-height: 45px;
+      min-width: 45px;
       text-decoration: none;
       color: clr.$clr-primary;
       font-weight: fonts.$fw-medium;
       font-size: fonts.$fs-3;
+      @include mixin.flexbox(center, center, row);
   
       &:hover {
         color: clr.$clr-hover;
@@ -65,14 +68,16 @@
   }
 
   @media screen and (min-width: 1000px) {
-    justify-self: center;
 
     & .btn-book {
       display: none !important;
     }
+    
   }
 }
 .btn-dropdown {
+  min-height: 45px;
+  min-width: 45px;
   background-color: transparent;
   color: clr.$clr-primary;
   font-weight: fonts.$fw-medium;
@@ -94,7 +99,6 @@
   position: fixed;
   top: 0;
   margin-top: 75px;
-  padding: .5rem;
   padding-inline: 2rem;
   opacity: 0;
   transform: translateY(-250%);
@@ -119,13 +123,15 @@
   }
 
   & .dropdown-items {
-    gap: 1rem;
     @include mixin.flexbox(center, center, row);
 
     & a {
+      min-height: 45px;
+      min-width: 45px;
       color: clr.$clr-primary;
       font-size: fonts.$fs-8;
       font-weight: fonts.$fw-light;
+      @include mixin.flexbox(center, center, row);
     }
   }  
 }
@@ -138,6 +144,8 @@
     @include mixin.flexbox(center, center, row);
 
     & button {
+      min-height: 45px;
+      min-width: 45px;
       color: clr.$clr-primary;
       font-weight: fonts.$fw-medium;
       font-size: fonts.$fs-3;

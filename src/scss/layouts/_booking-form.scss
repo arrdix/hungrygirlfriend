@@ -53,6 +53,8 @@
   }
 
   & .form-back {
+    min-width: 45px;
+    min-height: 45px;
     color: clr.$clr-primary;
     text-decoration: none;
     @include mixin.flexbox(center, center, row);
@@ -180,15 +182,16 @@
     width: auto;
   }
 
-  .dropdown option {
-    background-color: clr.$clr-dark;
-    color: clr.$clr-primary;
-    font-size: fonts.$fs-2;
-  }
+  & .dropdown {
+    min-width: 45px;
+    min-height: 45px;
 
-  select option{
-    background-color: #82caff;
+    & option {
+      background-color: clr.$clr-dark;
+      color: clr.$clr-primary;
+      font-size: fonts.$fs-2;
     }
+  }
 
   & .note {
     padding: .5rem;
@@ -207,5 +210,10 @@
       border: 1px solid clr.$clr-hover;
       color: clr.$clr-hover;
     }
+  }
+
+  & input {
+    min-width: 45px;
+    min-height: 45px;
   }
 }

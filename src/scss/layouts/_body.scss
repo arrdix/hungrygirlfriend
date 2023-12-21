@@ -1,5 +1,6 @@
 @use '../abstracts/colors' as clr;
 @use '../abstracts/fonts' as fonts;
+@use '../abstracts/mixin' as mixin;
 
 a,
 button,
@@ -16,7 +17,10 @@ input {
   position: absolute;
   top: -100%;
   left: 0;
+  min-width: 45px;
+  min-height: 45px;
   z-index: 1000;
+  @include mixin.flexbox(center, center, row);
 
   &:focus {
     top: 0;
