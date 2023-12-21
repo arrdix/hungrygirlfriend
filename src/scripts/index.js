@@ -18,15 +18,4 @@ window.addEventListener('DOMContentLoaded', () => {
   AppHeader.init();
   Restaurant.init();
   SmoothScrolling.init();
-
-  document.querySelectorAll('a, button, input').forEach((e) => {
-    if (e.offsetHeight < 44) {
-      console.log(e, e.offsetHeight);
-    }
-  });
-  document.querySelectorAll('img').forEach((elem) => {
-    if (!elem.getAttribute('alt')) {
-      console.log(elem);
-    }
-  });
 });

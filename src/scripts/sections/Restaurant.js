@@ -28,7 +28,7 @@ export const Restaurant = {
           restaurant.rating
         } <i class="star fa-solid fa-star"></i></h3>
             <button type="button" aria-label="show ${restaurant.name} detail">
-              <i class="fa-solid fa-expand"></i>
+              <i class="full-screen fa-solid fa-expand"></i>
             </button>
           </div>
           <button type="button" aria-label="show ${restaurant.name} detail" class="box-overlay big">
@@ -50,7 +50,7 @@ export const Restaurant = {
           restaurant.rating
         } <i class="star fa-solid fa-star"></i></h3>
             <button type="button" aria-label="show ${restaurant.name} detail">
-              <i class="fa-solid fa-expand"></i>
+              <i class="full-screen fa-solid fa-expand"></i>
             </button>
           </div>
           <button type="button" aria-label="show ${restaurant.name} detail" class="box-overlay">
