@@ -21,7 +21,7 @@ export const Restaurant = {
       const box = document.createElement('div');
       box.classList.add('box', `box-${boxId}`, `resId-${restaurant.id}`);
 
-      if (boxId === 1 || boxId === 6) {
+      if (boxId <= 3) {
         box.innerHTML = `
           <div class="action-overlay big">
             <h3 class="box-title">${restaurant.name} | ${
@@ -75,7 +75,6 @@ export const Restaurant = {
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star-half-stroke"></i>
-            <i class="fa-regular fa-star"></i>
           `;
         }
 
@@ -85,7 +84,6 @@ export const Restaurant = {
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star"></i>
           `;
         }
 
