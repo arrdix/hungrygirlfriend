@@ -1,4 +1,4 @@
-export const MenuModal = {
+const MenuModal = {
   init() {
     this.initialListener();
   },
@@ -30,3 +30,5 @@ export const MenuModal = {
     }
   },
 };
+
+export default MenuModal;

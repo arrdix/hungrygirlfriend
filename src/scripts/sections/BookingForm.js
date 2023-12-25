@@ -1,22 +1,31 @@
-import { DataSource } from '../data/dataSource';
-import { FormValidation } from '../utils/FormValidation';
+import DataSource from '../data/DataSource';
+import FormValidation from '../utils/FormValidation';
 
-export const BookingForm = {
+const BookingForm = {
   init() {
     this.initialListener();
     this.populateRestaurant();
   },
 
   initialListener() {
-    document.getElementById('btn-back').addEventListener('click', this.toggleFormDispose);
-    document.getElementById('booking-form').addEventListener('submit', (event) => {
-      event.preventDefault();
-      this.validateOnUserSubmit();
-    });
+    document
+      .getElementById('btn-back')
+      .addEventListener('click', this.toggleFormDispose);
+    document
+      .getElementById('booking-form')
+      .addEventListener('submit', (event) => {
+        event.preventDefault();
+        this.validateOnUserSubmit();
+      });
   },
 
   validateOnUserSubmit() {
-    const inputFields = ['input-name', 'input-date', 'input-restaurant', 'input-note'];
+    const inputFields = [
+      'input-name',
+      'input-date',
+      'input-restaurant',
+      'input-note',
+    ];
     const validatedInput = this.inputValidation(inputFields);
 
     if (validatedInput.length === inputFields.length) {
@@ -31,18 +40,24 @@ export const BookingForm = {
 
   validateOnUserInput(inputFields) {
     inputFields.forEach((inputField) => {
-      document.getElementById(inputField).addEventListener('input', this.inputLiveValidation);
+      document
+        .getElementById(inputField)
+        .addEventListener('input', this.inputLiveValidation);
     });
   },
 
   inputValidation(inputFields) {
     return inputFields
-      .map((inputField) => {
-        return FormValidation.validate(document.getElementById(inputField), {
-          badValidation: document.querySelector(`.${inputField}-validation.bad`),
-          goodValidation: document.querySelector(`.${inputField}-validation.good`),
-        });
-      })
+      .map((inputField) =>
+        FormValidation.validate(document.getElementById(inputField), {
+          badValidation: document.querySelector(
+            `.${inputField}-validation.bad`,
+          ),
+          goodValidation: document.querySelector(
+            `.${inputField}-validation.good`,
+          ),
+        }),
+      )
       .filter((inputValue) => inputValue !== undefined);
   },
 
@@ -81,3 +96,5 @@ export const BookingForm = {
     }
   },
 };
+
+export default BookingForm;

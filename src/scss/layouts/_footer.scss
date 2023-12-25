@@ -1,6 +1,6 @@
-@use '../abstracts/colors' as clr;
-@use '../abstracts/fonts' as fonts;
-@use '../abstracts/mixin' as mixin;
+@use "../abstracts/colors" as clr;
+@use "../abstracts/fonts" as fonts;
+@use "../abstracts/mixin" as mixin;
 
 .footer-wrapper {
   width: 100%;
@@ -16,7 +16,7 @@
 
   .footer-logo {
     width: 250px;
-  
+
     @media screen and (min-width: 650px) {
       width: 300px;
     }
@@ -37,10 +37,11 @@
   }
 }
 .footer-nav-wrapper {
-  gap: .5rem;
+  gap: 0.5rem;
   @include mixin.flexbox(center, center, row);
 
-  & a, button {
+  & a,
+  button {
     min-width: 45px;
     min-height: 45px;
     text-decoration: none;
@@ -56,13 +57,13 @@
 }
 .copyright-wrapper {
   padding: 1rem;
-  border-top: 1px solid rgba($color: clr.$clr-primary, $alpha: .3);
+  border-top: 1px solid rgba($color: clr.$clr-primary, $alpha: 0.3);
   background-color: black;
 
- @include mixin.flexbox(center, center, row); 
+  @include mixin.flexbox(center, center, row);
 
- & p {
-  font-size: fonts.$fs-1;
-  color: clr.$clr-primary;
- }
+  & p {
+    font-size: fonts.$fs-1;
+    color: clr.$clr-primary;
+  }
 }

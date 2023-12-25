@@ -1,4 +1,4 @@
-export const AppHeader = {
+const AppHeader = {
   init() {
     this.initialListener();
   },
@@ -28,3 +28,5 @@ export const AppHeader = {
     });
   },
 };
+
+export default AppHeader;

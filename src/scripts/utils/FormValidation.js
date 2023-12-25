@@ -1,16 +1,18 @@
-export const FormValidation = {
+const FormValidation = {
   validate(inputField, { badValidation, goodValidation }) {
     if (this.isValid(inputField)) {
       this.renderGoodValidation(badValidation, goodValidation);
       return inputField.value;
     }
 
-    this.renderBadValidation(badValidation, goodValidation);
+    return this.renderBadValidation(badValidation, goodValidation);
   },
 
   isValid(inputField) {
     return (
-      inputField.value.length >= 4 && inputField.value !== '' && inputField.value !== 'default'
+      inputField.value.length >= 4 &&
+      inputField.value !== '' &&
+      inputField.value !== 'default'
     );
   },
 
@@ -24,3 +26,5 @@ export const FormValidation = {
     goodValidation.classList.remove('d-none');
   },
 };
+
+export default FormValidation;

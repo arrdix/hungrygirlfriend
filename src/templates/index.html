@@ -1,71 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-  integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-  crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>HUNGRYGIRLFRIEND</title>
-</head>
-<body>
-  <a href="" class="skip-to-content" aria-label="skip to content">Skip to Content</a>
-  <header>
-    <div class="header-wrapper glass" id="header">
-      <div class="logo-wrapper">
-        <a href="">
-          <img src="images/logo-white.png" class="header-logo" alt="logo">
-        </a>
-      </div>
-      <nav class="nav-wrapper">
-        <a href="/" class="btn-home">HOME</a>
-        <a href="" class="btn-restaurant">RESTAURANT</a>
-        <a href="#" class="btn-favorite">FAVORITE</a>
-        <button type="button" class="btn-book">BOOK</button>
-        <button type="button" class="btn-dropdown" id="btn-dropdown">
-          ABOUT
-        </button>
-      </nav>
-      <div class="book-wrapper">
-        <button type="button" class="btn-book">Book for me</button>
-      </div>
-      <div class="bars-wrapper">
-        <button type="button" id="btn-menu">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-      </div>
-    </div>
-    <div class="nav-dropdown glass" id="nav-dropdown">
-      <div class="dropdown-items" id="dropdown-items">
-        <a href="https://www.linkedin.com/in/yudistiraardi/" aria-label="linkedin">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a href="https://www.instagram.com/arrdix/" aria-label="instagram">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="https://www.github.com/arrdix/" aria-label="github">
-          <i class="fa-brands fa-github"></i>
-        </a>
-        <a href="https://api.whatsapp.com/send?phone=6281903864037" aria-label="whatsapp">
-          <i class="fa-brands fa-whatsapp"></i>
-        </a>
-        <a href="mailto:mail.ardix@gmail.com" aria-label="email">
-          <i class="fa-solid fa-envelope"></i>
-        </a>
-      </div>
-    </div>
-  </header>
-  <main>
-    <section class="menu-modal glass offcanvas active" id="menu-modal">
-      <nav class="menu-wrapper">
-        <div class="book-sm-wrapper">
-          <button type="button" id="btn-sm-book">BOOK FOR ME</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>HUNGRYGIRLFRIEND</title>
+  </head>
+  <body>
+    <a href="" class="skip-to-content" aria-label="skip to content"
+      >Skip to Content</a
+    >
+    <header>
+      <div class="header-wrapper glass" id="header">
+        <div class="logo-wrapper">
+          <a href="">
+            <img src="images/logo-white.png" class="header-logo" alt="logo" />
+          </a>
         </div>
-        <a href="/">HOME</a>
-        <a href="" class="btn-restaurant">RESTAURANT</a>
-        <a href="#">FAVORITE</a>
-        <div class="socials-items">
-          <a href="https://www.linkedin.com/in/yudistiraardi/" aria-label="linkedin">
+        <nav class="nav-wrapper">
+          <a href="/" class="btn-home">HOME</a>
+          <a href="" class="btn-restaurant">RESTAURANT</a>
+          <a href="#" class="btn-favorite">FAVORITE</a>
+          <button type="button" class="btn-book">BOOK</button>
+          <button type="button" class="btn-dropdown" id="btn-dropdown">
+            ABOUT
+          </button>
+        </nav>
+        <div class="book-wrapper">
+          <button type="button" class="btn-book">Book for me</button>
+        </div>
+        <div class="bars-wrapper">
+          <button type="button" id="btn-menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+      <div class="nav-dropdown glass" id="nav-dropdown">
+        <div class="dropdown-items" id="dropdown-items">
+          <a
+            href="https://www.linkedin.com/in/yudistiraardi/"
+            aria-label="linkedin"
+          >
             <i class="fa-brands fa-linkedin"></i>
           </a>
           <a href="https://www.instagram.com/arrdix/" aria-label="instagram">
@@ -74,126 +55,212 @@
           <a href="https://www.github.com/arrdix/" aria-label="github">
             <i class="fa-brands fa-github"></i>
           </a>
-          <a href="https://api.whatsapp.com/send?phone=6281903864037" aria-label="whatsapp">
+          <a
+            href="https://api.whatsapp.com/send?phone=6281903864037"
+            aria-label="whatsapp"
+          >
             <i class="fa-brands fa-whatsapp"></i>
           </a>
           <a href="mailto:mail.ardix@gmail.com" aria-label="email">
             <i class="fa-solid fa-envelope"></i>
           </a>
         </div>
-      </nav>
-    </section>
-    <section class="hero-wrapper" id="home">
-      <img src="images/heros/hero-image_1.jpg" class="hero-image grayscale" alt="hero-image">
-      <div class="hero-overlay disposable" id="hero-overlay">
-        <div class="hero-title-wrapper">
-          <h1 class="hero-subtitle">YOUR GIRLFRIEND IS HUNGRY AND YOU</h1>
-          <h2 class="hero-title">DON'T KNOW WHERE TO GO?</h2>
-          <h2 class="hero-tagline">
-            Well, let me help you, fella.
+      </div>
+    </header>
+    <main>
+      <section class="menu-modal glass offcanvas active" id="menu-modal">
+        <nav class="menu-wrapper">
+          <div class="book-sm-wrapper">
+            <button type="button" id="btn-sm-book">BOOK FOR ME</button>
+          </div>
+          <a href="/">HOME</a>
+          <a href="" class="btn-restaurant">RESTAURANT</a>
+          <a href="#">FAVORITE</a>
+          <div class="socials-items">
+            <a
+              href="https://www.linkedin.com/in/yudistiraardi/"
+              aria-label="linkedin"
+            >
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/arrdix/" aria-label="instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.github.com/arrdix/" aria-label="github">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a
+              href="https://api.whatsapp.com/send?phone=6281903864037"
+              aria-label="whatsapp"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="mailto:mail.ardix@gmail.com" aria-label="email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </nav>
+      </section>
+      <section class="hero-wrapper" id="home">
+        <img
+          src="images/heros/hero-image_1.jpg"
+          class="hero-image grayscale"
+          alt="hero-image"
+        />
+        <div class="hero-overlay disposable" id="hero-overlay">
+          <div class="hero-title-wrapper">
+            <h1 class="hero-subtitle">YOUR GIRLFRIEND IS HUNGRY AND YOU</h1>
+            <h2 class="hero-title">DON'T KNOW WHERE TO GO?</h2>
+            <h2 class="hero-tagline">
+              Well, let me help you, fella.
               <a href="#restaurant" aria-label="show restaurant">
                 <i class="fa-solid fa-angle-down"></i>
               </a>
-          </h2>
+            </h2>
+          </div>
+        </div>
+        <div class="form-overlay disposable active d-none" id="form-overlay">
+          <div class="form-title-wrapper">
+            <p class="form-title">Book Restaurant</p>
+            <button type="button" class="form-back" id="btn-back">
+              <i class="fa-solid fa-angle-left"></i>
+              <p class="form-back-label">Back</p>
+            </button>
+          </div>
+          <div class="message-wrapper">
+            <p class="message-title">Uh-oh,</p>
+            <p class="message-subtitle">She's mad, isn't she?</p>
+            <p class="message-content">I'm praying for your life, pal.</p>
+          </div>
+          <form action="" class="form-wrapper" id="booking-form">
+            <div class="input-wrapper">
+              <div class="input-header">
+                <label for="name">Name</label>
+                <p class="input-name-validation form-validation good d-none">
+                  Looks good!
+                </p>
+                <p class="input-name-validation form-validation bad d-none">
+                  Please provide name with more than 4 characters
+                </p>
+              </div>
+              <input
+                type="text"
+                name="name"
+                id="input-name"
+                aria-label="input name"
+              />
+            </div>
+            <div class="input-wrapper">
+              <div class="input-header">
+                <label for="date">Date</label>
+                <p class="input-date-validation form-validation good d-none">
+                  Looks good!
+                </p>
+                <p class="input-date-validation form-validation bad d-none">
+                  Please provide a valid date.
+                </p>
+              </div>
+              <input
+                type="date"
+                name="date"
+                class="date"
+                id="input-date"
+                aria-label="input date"
+              />
+            </div>
+            <div class="input-wrapper">
+              <div class="input-header">
+                <label for="restaurant">Restaurant</label>
+                <p
+                  class="input-restaurant-validation form-validation good d-none"
+                >
+                  Looks good!
+                </p>
+                <p
+                  class="input-restaurant-validation form-validation bad d-none"
+                >
+                  Please select a valid restaurant.
+                </p>
+              </div>
+              <select name="dropdown" class="dropdown" id="input-restaurant">
+                <option value="default">Choose Restaurant</option>
+              </select>
+            </div>
+            <div class="input-wrapper">
+              <div class="input-header">
+                <label for="note">Note</label>
+                <p class="input-note-validation form-validation good d-none">
+                  Looks good!
+                </p>
+                <p class="input-note-validation form-validation bad d-none">
+                  Please provide note with more than 4 characters.
+                </p>
+              </div>
+              <input
+                type="textarea"
+                name="note"
+                class="note"
+                id="input-note"
+                aria-label="input note"
+              />
+            </div>
+            <div class="input-wrapper">
+              <input
+                type="submit"
+                name="note"
+                class="submit"
+                value="Book Now"
+              />
+            </div>
+          </form>
+        </div>
+      </section>
+      <section class="restaurant-wrapper" id="restaurant">
+        <div class="box-wrapper" id="box-wrapper"></div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-wrapper">
+        <a href="/" class="footer-logo-wrapper">
+          <img src="images/logo-white.png" class="footer-logo" alt="logo" />
+        </a>
+        <div class="footer-connect-wrapper">
+          <a
+            href="https://www.linkedin.com/in/yudistiraardi/"
+            aria-label="linkedin"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="https://www.instagram.com/arrdix/" aria-label="instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.github.com/arrdix/" aria-label="github">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a
+            href="https://api.whatsapp.com/send?phone=6281903864037"
+            aria-label="whatsapp"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a href="mailto:mail.ardix@gmail.com" aria-label="email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
+        <div class="footer-nav-wrapper">
+          <a href="/">HOME</a>
+          <a href="" class="btn-restaurant">RESTAURANT</a>
+          <a href="#">FAVORITE</a>
+          <button type="button" class="btn-book">BOOK</button>
+          <button type="button" class="btn-dropdown">ABOUT</button>
         </div>
       </div>
-      <div class="form-overlay disposable active d-none" id="form-overlay">
-        <div class="form-title-wrapper">
-          <p class="form-title">Book Restaurant</p>
-          <button type="button" class="form-back" id="btn-back">
-            <i class="fa-solid fa-angle-left"></i>
-            <p class="form-back-label">Back</p>
-          </button>
-        </div>
-        <div class="message-wrapper">
-          <p class="message-title">Uh-oh,</p>
-          <p class="message-subtitle">She's mad, isn't she?</p>
-          <p class="message-content">I'm praying for your life, pal.</p>
-        </div>
-        <form action="" class="form-wrapper" id="booking-form">
-          <div class="input-wrapper">
-            <div class="input-header">
-              <label for="name">Name</label>
-              <p class="input-name-validation form-validation good d-none">Looks good!</p>
-              <p class="input-name-validation form-validation bad d-none">Please provide name with more than 4 characters</p>
-            </div>
-            <input type="text" name="name" id="input-name" aria-label="input name">
-          </div>
-          <div class="input-wrapper">
-            <div class="input-header">
-              <label for="date">Date</label>
-              <p class="input-date-validation form-validation good d-none">Looks good!</p>
-              <p class="input-date-validation form-validation bad d-none">Please provide a valid date.</p>
-            </div>
-            <input type="date" name="date" class="date" id="input-date" aria-label="input date">
-          </div>
-          <div class="input-wrapper">
-            <div class="input-header">
-              <label for="restaurant">Restaurant</label>
-              <p class="input-restaurant-validation form-validation good d-none">Looks good!</p>
-              <p class="input-restaurant-validation form-validation bad d-none">Please select a valid restaurant.</p>
-            </div>
-            <select name="dropdown" class="dropdown" id="input-restaurant">
-              <option value="default">Choose Restaurant</option>
-            </select>
-          </div>
-          <div class="input-wrapper">
-            <div class="input-header">
-              <label for="note">Note</label>
-              <p class="input-note-validation form-validation good d-none">Looks good!</p>
-              <p class="input-note-validation form-validation bad d-none">Please provide note with more than 4 characters.</p>
-            </div>
-            <input type="textarea" name="note" class="note" id="input-note" aria-label="input note">
-          </div>
-          <div class="input-wrapper">
-            <input type="submit" name="note" class="submit" value="Book Now">
-          </div>
-        </form>
+      <div class="copyright-wrapper">
+        <p>&copy; 2023 HUNGRYGIRLFRIEND | Made with ♥ by Yudistira Ardi</p>
       </div>
-    </section>
-    <section class="restaurant-wrapper" id="restaurant">
-      <div class="box-wrapper" id="box-wrapper">
-      </div>
-    </section>
-  </main>
-  <footer>
-    <div class="footer-wrapper">
-      <a href="/" class="footer-logo-wrapper">
-        <img src="images/logo-white.png" class="footer-logo" alt="logo">
-      </a>
-      <div class="footer-connect-wrapper">
-        <a href="https://www.linkedin.com/in/yudistiraardi/" aria-label="linkedin">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a href="https://www.instagram.com/arrdix/" aria-label="instagram">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="https://www.github.com/arrdix/" aria-label="github">
-          <i class="fa-brands fa-github"></i>
-        </a>
-        <a href="https://api.whatsapp.com/send?phone=6281903864037" aria-label="whatsapp">
-          <i class="fa-brands fa-whatsapp"></i>
-        </a>
-        <a href="mailto:mail.ardix@gmail.com" aria-label="email">
-          <i class="fa-solid fa-envelope"></i>
-        </a>
-      </div>
-      <div class="footer-nav-wrapper">
-        <a href="/">HOME</a>
-        <a href="" class="btn-restaurant">RESTAURANT</a>
-        <a href="#">FAVORITE</a>
-        <button type="button" class="btn-book">BOOK</button>
-        <button type="button" class="btn-dropdown">
-          ABOUT
-        </button>
-      </div>
-    </div>
-    <div class="copyright-wrapper">
-      <p>&copy; 2023 HUNGRYGIRLFRIEND | Made with ♥ by Yudistira Ardi</p>
-    </div>
-  </footer>
-  <a href="#" class="back-to-top" aria-label="back to top">
-    <i class="fa-solid fa-angles-up"></i>
-  </a>
-</body>
+    </footer>
+    <a href="#" class="back-to-top" aria-label="back to top">
+      <i class="fa-solid fa-angles-up"></i>
+    </a>
+  </body>
 </html>

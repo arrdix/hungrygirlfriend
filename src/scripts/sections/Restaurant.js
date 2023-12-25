@@ -1,6 +1,6 @@
-import { DataSource } from '../data/dataSource';
+import DataSource from '../data/DataSource';
 
-export const Restaurant = {
+const Restaurant = {
   init() {
     this.initialize();
   },
@@ -24,15 +24,15 @@ export const Restaurant = {
       box.innerHTML = `
         <div class="action-overlay ${boxId <= 3 ? 'big' : ''}">
           <h3 class="box-title">${restaurant.name} | ${
-        restaurant.rating
-      } <i class="star fa-solid fa-star"></i></h3>
+            restaurant.rating
+          } <i class="star fa-solid fa-star"></i></h3>
           <button type="button" aria-label="show ${restaurant.name} detail">
             <i class="full-screen fa-solid fa-expand"></i>
           </button>
         </div>
-        <button type="button" aria-label="show ${restaurant.name} detail" class="box-overlay ${
-        boxId <= 3 ? 'big' : ''
-      }">
+        <button type="button" aria-label="show ${
+          restaurant.name
+        } detail" class="box-overlay ${boxId <= 3 ? 'big' : ''}">
           ${boxId <= 3 ? this.renderTag() : ''}
           <h3 class="box-title">${restaurant.name}</h3>
           <h4 class="box-city">${restaurant.city}</h4>
@@ -40,7 +40,9 @@ export const Restaurant = {
             ${this.renderStars(roundedRating)}
           </div>
         </button>
-        <img src="${restaurant.pictureId}" class="restaurant-image" alt="${restaurant.name}">
+        <img src="${restaurant.pictureId}" class="restaurant-image" alt="${
+          restaurant.name
+        }">
       `;
 
       const boxWrapper = document.getElementById('box-wrapper');
@@ -50,12 +52,13 @@ export const Restaurant = {
   },
 
   renderStars(roundedRating) {
-    let stars = [];
+    const stars = [];
     for (let i = 1; i <= roundedRating; i++) {
       stars.push('<i class="fa-solid fa-star"></i>');
     }
 
-    if (!(roundedRating % 1 === 0)) stars.push('<i class="fa-solid fa-star-half-stroke"></i>');
+    if (!(roundedRating % 1 === 0))
+      stars.push('<i class="fa-solid fa-star-half-stroke"></i>');
 
     return stars.join('');
   },
@@ -68,3 +71,5 @@ export const Restaurant = {
     `;
   },
 };
+
+export default Restaurant;

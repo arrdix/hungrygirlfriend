@@ -1,4 +1,4 @@
-export const SmoothScrolling = {
+const SmoothScrolling = {
   init() {
     this.initialListener();
   },
@@ -11,11 +11,13 @@ export const SmoothScrolling = {
       });
     });
 
-    document.querySelector('.skip-to-content').addEventListener('click', (event) => {
-      event.preventDefault();
-      this.initSmoothScrolling('restaurant');
-      document.querySelector('.box-1 .box-overlay').focus();
-    });
+    document
+      .querySelector('.skip-to-content')
+      .addEventListener('click', (event) => {
+        event.preventDefault();
+        this.initSmoothScrolling('restaurant');
+        document.querySelector('.box-1 .box-overlay').focus();
+      });
   },
 
   initSmoothScrolling(target) {
@@ -28,3 +30,5 @@ export const SmoothScrolling = {
     });
   },
 };
+
+export default SmoothScrolling;

@@ -1,6 +1,6 @@
-@use '../abstracts/colors' as clr;
-@use '../abstracts/fonts' as fonts;
-@use '../abstracts/mixin' as mixin;
+@use "../abstracts/colors" as clr;
+@use "../abstracts/fonts" as fonts;
+@use "../abstracts/mixin" as mixin;
 
 a,
 button,
@@ -9,7 +9,7 @@ input {
 
   &:focus {
     border: 1px solid clr.$clr-focus;
-    box-shadow: 0 0 5px rgba($color: clr.$clr-focus, $alpha: .5);
+    box-shadow: 0 0 5px rgba($color: clr.$clr-focus, $alpha: 0.5);
     outline: none;
   }
 }
@@ -36,7 +36,7 @@ input {
   margin-inline: 2rem;
   margin-block: 4rem;
   padding-inline: 1rem;
-  padding-block: .74rem;
+  padding-block: 0.74rem;
 
   border-radius: 100%;
   background: rgba(0, 0, 0, 0.5);
@@ -45,14 +45,14 @@ input {
   -webkit-backdrop-filter: blur(6.1px);
 
   transform: translateY(0);
-  transition: transform .3s ease;
+  transition: transform 0.3s ease;
 
   font-size: fonts.$fs-8;
   color: clr.$clr-primary;
 
   &:hover {
     transform: translateY(-15%);
-    transition: transform .3s ease;
+    transition: transform 0.3s ease;
   }
 
   @media screen and (min-width: 650px) {

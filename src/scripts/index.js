@@ -6,11 +6,11 @@ import '../scss/styles.scss';
 // Import all of Bootstrap's JS
 import * as bootstrap from 'bootstrap';
 
-import { MenuModal } from './sections/MenuModal';
-import { BookingForm } from './sections/BookingForm';
-import { AppHeader } from './sections/AppHeader';
-import { Restaurant } from './sections/Restaurant';
-import { SmoothScrolling } from './utils/SmoothScrolling';
+import MenuModal from './sections/MenuModal';
+import BookingForm from './sections/BookingForm';
+import AppHeader from './sections/AppHeader';
+import Restaurant from './sections/Restaurant';
+import SmoothScrolling from './utils/SmoothScrolling';
 
 window.addEventListener('DOMContentLoaded', () => {
   MenuModal.init();

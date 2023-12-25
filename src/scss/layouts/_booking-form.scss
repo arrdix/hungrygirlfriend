@@ -1,6 +1,6 @@
-@use '../abstracts/mixin' as mixin;
-@use '../abstracts/colors' as clr;
-@use '../abstracts/fonts' as fonts;
+@use "../abstracts/mixin" as mixin;
+@use "../abstracts/colors" as clr;
+@use "../abstracts/fonts" as fonts;
 
 .form-overlay {
   position: absolute;
@@ -41,7 +41,7 @@
 .form-title-wrapper {
   padding: 1rem;
   padding-inline: 3rem;
-  border-bottom: 1px solid rgba($color: clr.$clr-primary, $alpha: .2);
+  border-bottom: 1px solid rgba($color: clr.$clr-primary, $alpha: 0.2);
   @include mixin.grid-item-col(1, 4);
   @include mixin.grid-item-row(1, 2);
   @include mixin.flexbox(space-between, center, row);
@@ -63,7 +63,7 @@
       font-size: fonts.$fs-3;
       font-weight: fonts.$fw-light;
       color: clr.$clr-primary;
-      margin-left: .25rem;
+      margin-left: 0.25rem;
     }
 
     & .fa-angle-left {
@@ -73,7 +73,7 @@
     @media screen and (min-width: 650px) {
       & .form-back-label {
         font-size: fonts.$fs-6;
-        margin-left: .5rem;
+        margin-left: 0.5rem;
       }
     }
   }
@@ -104,8 +104,10 @@
     padding: 2rem 2rem 3rem 2rem;
     @include mixin.grid-item-col(1, 2);
     @include mixin.grid-item-row(2, 3);
-    
-    & .message-title, .message-subtitle, .message-content {
+
+    & .message-title,
+    .message-subtitle,
+    .message-content {
       transform: translateY(-25px);
     }
 
@@ -113,7 +115,8 @@
       font-size: fonts.$fs-8;
     }
 
-    & .message-subtitle, .message-content {
+    & .message-subtitle,
+    .message-content {
       font-size: fonts.$fs-5;
     }
   }
@@ -122,8 +125,10 @@
     padding: 2rem 2rem 3rem 2rem;
     @include mixin.grid-item-col(1, 2);
     @include mixin.grid-item-row(2, 3);
-    
-    & .message-title, .message-subtitle, .message-content {
+
+    & .message-title,
+    .message-subtitle,
+    .message-content {
       transform: translateY(-25px);
     }
   }
@@ -141,8 +146,8 @@
 }
 .input-wrapper {
   width: 100%;
-  margin-bottom: .5rem;
-  gap: .25rem;
+  margin-bottom: 0.5rem;
+  gap: 0.25rem;
   @include mixin.flexbox(center, flex-start, column);
 
   & .input-header {
@@ -159,18 +164,19 @@
       font-size: fonts.$fs-1;
 
       &.good {
-        color: clr.$clr-good;  
+        color: clr.$clr-good;
       }
 
       &.bad {
-        color: clr.$clr-bad; 
+        color: clr.$clr-bad;
       }
     }
   }
 
-  & input, .dropdown {
+  & input,
+  .dropdown {
     width: 100%;
-    padding: .5rem;
+    padding: 0.5rem;
     background-color: transparent;
     border: 1px solid clr.$clr-primary;
     border-radius: 5px;
@@ -194,14 +200,14 @@
   }
 
   & .note {
-    padding: .5rem;
+    padding: 0.5rem;
     height: 50px;
   }
 
   & .submit {
     width: 40%;
-    margin-top: .5rem;
-    padding-block: .5rem;
+    margin-top: 0.5rem;
+    padding-block: 0.5rem;
     padding-inline: 2rem;
     align-self: flex-end;
 
