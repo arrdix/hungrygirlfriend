@@ -14,6 +14,7 @@
     "no-use-before-define": "off",
     "no-alert": "off",
     "no-plusplus": "off",
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "no-console": "off"
   }
 }
