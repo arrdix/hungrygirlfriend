@@ -16,6 +16,8 @@
     "no-plusplus": "off",
     "no-unused-vars": "warn",
     "no-console": "off",
-    "no-unused-expressions": ["error", { "allowTernary": true }]
+    "no-unused-expressions": ["error", { "allowTernary": true }],
+    "no-underscore-dangle": "off",
+    "class-methods-use-this": "off"
   }
 }
