@@ -54,39 +54,6 @@ const RestaurantSource = {
       );
     }
   },
-
-  async smallImage(id) {
-    try {
-      return axios.get(API_ENDPOINT.IMAGE_SMALL(id));
-    } catch (error) {
-      console.log(error.code, error.message);
-      return window.alert(
-        'Oops! Something went wrong while trying to get the small image',
-      );
-    }
-  },
-
-  async mediumImage(id) {
-    try {
-      return axios.get(API_ENDPOINT.IMAGE_MEDIUM(id));
-    } catch (error) {
-      console.log(error.code, error.message);
-      return window.alert(
-        'Oops! Something went wrong while trying to get the medium image',
-      );
-    }
-  },
-
-  async largeImage(id) {
-    try {
-      return axios.get(API_ENDPOINT.IMAGE_LARGE(id));
-    } catch (error) {
-      console.log(error.code, error.message);
-      return window.alert(
-        'Oops! Something went wrong while trying to get the large image',
-      );
-    }
-  },
 };
 
 export default RestaurantSource;

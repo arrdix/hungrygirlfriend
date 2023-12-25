@@ -1,28 +1,38 @@
-import DataSource from '../data/DataSource';
+import RestaurantSource from '../data/restaurant-source';
+import API_ENDPOINT from '../globals/api-endpoint';
 
 const Restaurant = {
   init() {
-    this.initialize();
+    this.renderBox();
   },
 
-  async initialize() {
-    try {
-      const response = await DataSource.getData();
-      this.renderBox(response.data.restaurants);
-    } catch (error) {
-      window.alert(error.message);
-    }
-  },
-
-  renderBox(restaurants) {
+  async renderBox() {
+    const restaurants = await RestaurantSource.restaurantList();
+    const recommendedRestaurant = [];
+    let recommendedId = 1;
     let boxId = 1;
+
     restaurants.forEach((restaurant) => {
       const roundedRating = Math.floor(restaurant.rating / 0.5) * 0.5;
-      const box = document.createElement('div');
-      box.classList.add('box', `box-${boxId}`, `resId-${restaurant.id}`);
+      const boxElement = document.createElement('div');
 
-      box.innerHTML = `
-        <div class="action-overlay ${boxId <= 3 ? 'big' : ''}">
+      if (this.isRecommended(recommendedRestaurant, roundedRating)) {
+        recommendedRestaurant.push(restaurant.id);
+      }
+
+      boxElement.setAttribute('id', `${restaurant.id}`);
+      boxElement.classList.add(
+        'box',
+        `${
+          recommendedRestaurant.includes(restaurant.id)
+            ? `big-box-${recommendedId++}`
+            : `box-${boxId++}`
+        }`,
+      );
+      boxElement.innerHTML = `
+        <div class="action-overlay ${
+          recommendedRestaurant.includes(restaurant.id) ? 'big' : ''
+        }">
           <h3 class="box-title">${restaurant.name} | ${
             restaurant.rating
           } <i class="star fa-solid fa-star"></i></h3>
@@ -32,23 +42,38 @@ const Restaurant = {
         </div>
         <button type="button" aria-label="show ${
           restaurant.name
-        } detail" class="box-overlay ${boxId <= 3 ? 'big' : ''}">
-          ${boxId <= 3 ? this.renderTag() : ''}
+        } detail" class="box-overlay ${
+          recommendedRestaurant.includes(restaurant.id) ? 'big' : ''
+        }">
+          ${
+            recommendedRestaurant.includes(restaurant.id)
+              ? this.renderTag()
+              : ''
+          }
           <h3 class="box-title">${restaurant.name}</h3>
           <h4 class="box-city">${restaurant.city}</h4>
           <div class="box-star-wrapper">
             ${this.renderStars(roundedRating)}
           </div>
         </button>
-        <img src="${restaurant.pictureId}" class="restaurant-image" alt="${
-          restaurant.name
-        }">
+        <img src="${API_ENDPOINT.IMAGE_LARGE(
+          restaurant.pictureId,
+        )}" class="restaurant-image" alt="${restaurant.name}">
       `;
 
       const boxWrapper = document.getElementById('box-wrapper');
-      boxWrapper.appendChild(box);
-      boxId++;
+      boxWrapper.appendChild(boxElement);
     });
+  },
+
+  isRecommended(recommendedRestaurant, rating) {
+    const maxRecommendedItem = 3;
+
+    if (recommendedRestaurant.length < maxRecommendedItem) {
+      if (rating > 4) return true;
+    }
+
+    return false;
   },
 
   renderStars(roundedRating) {
