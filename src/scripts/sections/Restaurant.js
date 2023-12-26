@@ -1,14 +1,17 @@
 import RestaurantSource from '../data/restaurant-source';
 import '../components/RestaurantBox';
+import LoadingHelper from '../utils/LoadingHelper';
 
 const Restaurant = {
   init() {
+    LoadingHelper.activateLoading();
     this.getRestaurant();
   },
 
   async getRestaurant() {
     const restaurants = await RestaurantSource.restaurantList();
     this.findRecommendedRestaurant(restaurants);
+    LoadingHelper.deactivateLoading();
   },
 
   async findRecommendedRestaurant(restaurants) {
