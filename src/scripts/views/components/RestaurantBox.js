@@ -1,4 +1,4 @@
-import API_ENDPOINT from '../globals/api-endpoint';
+import API_ENDPOINT from '../../globals/APIEndpoint';
 
 class RestaurantBox extends HTMLElement {
   set restaurant({ restaurant, recommendedRestaurant, roundedRating }) {

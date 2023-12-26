@@ -1,6 +1,6 @@
-import RestaurantSource from '../data/restaurant-source';
+import RestaurantSource from '../../data/RestaurantSource';
+import LoadingHelper from '../../utils/LoadingHelper';
 import '../components/RestaurantBox';
-import LoadingHelper from '../utils/LoadingHelper';
 
 const Restaurant = {
   init() {

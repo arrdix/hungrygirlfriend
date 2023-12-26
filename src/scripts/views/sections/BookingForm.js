@@ -1,5 +1,5 @@
-import DataSource from '../data/DataSource';
-import FormValidation from '../utils/FormValidation';
+import DataSource from '../../data/DataSource';
+import FormValidation from '../../utils/FormValidation';
 
 const BookingForm = {
   init() {

@@ -1,4 +1,4 @@
-import CONFIG from './config';
+import CONFIG from './Config';
 
 const API_ENDPOINT = {
   LIST: `${CONFIG.BASE_URL}/list`,
