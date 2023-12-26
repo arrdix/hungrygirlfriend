@@ -1,30 +1,17 @@
-import RestaurantSource from '../../data/RestaurantSource';
 import LoadingHelper from '../../utils/LoadingHelper';
+import RestaurantHelper from '../../utils/RestaurantHelper';
 import '../components/RestaurantBox';
 
 const Restaurant = {
-  init() {
-    LoadingHelper.activateLoading();
-    this.getRestaurant();
-  },
-
-  async getRestaurant() {
-    const restaurants = await RestaurantSource.restaurantList();
-    this.findRecommendedRestaurant(restaurants);
-    LoadingHelper.deactivateLoading();
-  },
-
-  async findRecommendedRestaurant(restaurants) {
-    const recommendedRestaurant = [];
+  render(restaurants) {
     let recommendedId = 0;
+    const recommendedRestaurant =
+      RestaurantHelper.findRecommendedResturant(restaurants);
 
     restaurants.forEach((restaurant) => {
-      const roundedRating = Math.floor(restaurant.rating / 0.5) * 0.5;
-
-      if (this.isRecommended(recommendedRestaurant, roundedRating)) {
-        recommendedRestaurant.push(restaurant.id);
-        recommendedId++;
-      }
+      // increment recommendedId by 1 whenever the current restaurant is a
+      // recommended restaurant for grid-area styling purpose
+      if (recommendedRestaurant.includes(restaurant.id)) recommendedId++;
 
       this.createRestaurantBox({
         restaurant,
@@ -32,10 +19,12 @@ const Restaurant = {
         recommendedId,
       });
     });
+
+    LoadingHelper.deactivateLoading();
   },
 
   createRestaurantBox({ restaurant, recommendedRestaurant, recommendedId }) {
-    const roundedRating = Math.floor(restaurant.rating / 0.5) * 0.5;
+    const roundedRating = RestaurantHelper.ratingRounder(restaurant.rating);
     const restaurantBox = document.createElement('restaurant-box');
 
     restaurantBox.setAttribute('id', `${restaurant.id}`);
@@ -55,16 +44,6 @@ const Restaurant = {
 
     const boxWrapper = document.getElementById('box-wrapper');
     boxWrapper.appendChild(restaurantBox);
-  },
-
-  isRecommended(recommendedRestaurant, rating) {
-    const maxRecommendedItem = 3;
-
-    if (recommendedRestaurant.length < maxRecommendedItem) {
-      if (rating > 4) return true;
-    }
-
-    return false;
   },
 };
 

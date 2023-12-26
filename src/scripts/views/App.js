@@ -1,8 +1,8 @@
 import Routes from '../routes/Routes';
 import urlParser from '../routes/UrlParser';
 import SmoothScrolling from '../utils/SmoothScrolling';
-import AppHeader from './sections/AppHeader';
-import MenuModal from './sections/MenuModal';
+import AppHeader from './contents/AppHeader';
+import MenuModal from './contents/MenuModal';
 
 class App {
   constructor({ header, footer, menuModal, mainContent }) {
@@ -15,8 +15,8 @@ class App {
   }
 
   initAppShell() {
-    AppHeader.init();
-    MenuModal.init();
+    // AppHeader.init();
+    // MenuModal.init();
 
     this.initAppFunctionality();
   }
@@ -25,7 +25,7 @@ class App {
     SmoothScrolling.init();
   }
 
-  render() {
+  async render() {
     const activeUrl = urlParser.getFullUrl();
     const activePage = Routes[activeUrl];
     this.mainContent.innerHTML = activePage.renderSection();
