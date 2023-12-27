@@ -64,3 +64,6 @@ input {
     font-size: fonts.$fs-9;
   }
 }
+main {
+  @include mixin.flexbox(center, center, column);
+}

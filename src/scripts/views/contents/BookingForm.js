@@ -1,4 +1,3 @@
-import DataSource from '../../data/DataSource';
 import FormValidation from '../../utils/FormValidation';
 
 const BookingForm = {
@@ -77,23 +76,21 @@ const BookingForm = {
   },
 
   async populateRestaurant() {
-    try {
-      const response = await DataSource.getData();
-      populateToDropdown(response.data.restaurants);
-    } catch (error) {
-      window.alert(error.message);
-    }
-
-    function populateToDropdown(restaurants) {
-      restaurants.forEach((restaurant) => {
-        const dropdownItem = document.createElement('option');
-        dropdownItem.setAttribute('value', `${restaurant.name}`);
-        dropdownItem.textContent = `${restaurant.name}`;
-
-        const inputRestaurant = document.getElementById('input-restaurant');
-        inputRestaurant.append(dropdownItem);
-      });
-    }
+    // try {
+    //   const response = await DataSource.getData();
+    //   populateToDropdown(response.data.restaurants);
+    // } catch (error) {
+    //   window.alert(error.message);
+    // }
+    // function populateToDropdown(restaurants) {
+    //   restaurants.forEach((restaurant) => {
+    //     const dropdownItem = document.createElement('option');
+    //     dropdownItem.setAttribute('value', `${restaurant.name}`);
+    //     dropdownItem.textContent = `${restaurant.name}`;
+    //     const inputRestaurant = document.getElementById('input-restaurant');
+    //     inputRestaurant.append(dropdownItem);
+    //   });
+    // }
   },
 };
 

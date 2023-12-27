@@ -29,13 +29,12 @@
     color: clr.$clr-primary;
     font-weight: fonts.$fw-bolder;
     font-size: fonts.$fs-9;
-    line-height: 1.75rem;
   }
 
   & .banner-subtitle {
     text-align: center;
     color: clr.$clr-primary;
-    font-weight: fonts.$fw-bold;
-    font-size: fonts.$fs-8;
+    font-weight: fonts.$fw-normal;
+    font-size: fonts.$fs-3;
   }
 }

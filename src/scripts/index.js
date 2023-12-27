@@ -2,6 +2,7 @@ import 'regenerator-runtime'; /* for async await transpile */
 
 import '../scss/styles.scss';
 import App from './views/App';
+import ServiceWorkerTools from './utils/ServiceWorkerTools';
 
 const app = new App({
   header: document.getElementById('header'),
@@ -10,8 +11,9 @@ const app = new App({
   mainContent: document.getElementById('main-content'),
 });
 
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
   app.render();
+  ServiceWorkerTools.register();
 });
 
 window.addEventListener('hashchange', () => {
