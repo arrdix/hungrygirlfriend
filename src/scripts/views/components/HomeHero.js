@@ -1,7 +1,7 @@
 class HomeHero extends HTMLElement {
-  set heroContent({ title, subTitle, tagline }) {
+  set content({ title, subtitle, tagline }) {
     this.title = title;
-    this.subTitle = subTitle;
+    this.subtitle = subtitle;
     this.tagline = tagline;
 
     this.renderHero();
@@ -11,12 +11,12 @@ class HomeHero extends HTMLElement {
     this.innerHTML = `
       <img
       src="images/heros/hero-image_2.jpg"
-      class="hero-image grayscale zoom active"
+      class="hero-image fade-effect zoom active"
       alt="hero-image"
       />
       <div class="hero-overlay disposable" id="hero-overlay">
         <div class="hero-title-wrapper">
-          <h1 class="hero-subtitle">${this.subTitle}</h1>
+          <h1 class="hero-subtitle">${this.subtitle}</h1>
           <h2 class="hero-title">${this.title}</h2>
           <h2 class="hero-tagline">
             ${this.tagline}

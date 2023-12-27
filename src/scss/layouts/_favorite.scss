@@ -1,0 +1,27 @@
+.favorite-wrapper {
+  width: 100%;
+  height: auto;
+  display: grid;
+  gap: .25rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 400px;
+
+  & .favorite-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.05);
+    filter: brightness(50%) blur(0);
+    transition:
+      transform 0.3s ease-in-out,
+      filter 0.3s ease-in-out;
+  }
+
+  & .box:hover .favorite-image {
+    transform: scale(1);
+    filter: brightness(100%);
+    transition:
+      transform 0.3s ease-in-out,
+      filter 0.3s ease-in-out;
+  }
+}

@@ -1,9 +1,10 @@
 import API_ENDPOINT from '../../globals/APIEndpoint';
+import RestaurantHelper from '../../utils/RestaurantHelper';
 
 class RestaurantBox extends HTMLElement {
   set restaurant({ restaurant, recommendedRestaurant, roundedRating }) {
     this._restaurant = restaurant;
-    this._recommendedRestaurant = recommendedRestaurant;
+    this._recommendedRestaurant = recommendedRestaurant || [];
     this._roundedRating = roundedRating;
 
     this.renderBox();
@@ -28,38 +29,18 @@ class RestaurantBox extends HTMLElement {
     }">
       ${
         this._recommendedRestaurant.includes(this._restaurant.id)
-          ? this.renderTag()
+          ? RestaurantHelper.renderTag()
           : ''
       }
       <h3 class="box-title">${this._restaurant.name}</h3>
       <h4 class="box-city">${this._restaurant.city}</h4>
       <div class="box-star-wrapper">
-        ${this.renderStars(this._roundedRating)}
+        ${RestaurantHelper.renderStars(this._roundedRating)}
       </div>
     </button>
     <img src="${API_ENDPOINT.IMAGE_LARGE(
       this._restaurant.pictureId,
     )}" class="restaurant-image">
-    `;
-  }
-
-  renderStars() {
-    const stars = [];
-    for (let i = 1; i <= this._roundedRating; i++) {
-      stars.push('<i class="fa-solid fa-star"></i>');
-    }
-
-    if (!(this._roundedRating % 1 === 0))
-      stars.push('<i class="fa-solid fa-star-half-stroke"></i>');
-
-    return stars.join('');
-  }
-
-  renderTag() {
-    return `
-    <div class="box-tag">
-      <p>Recommended</p>
-    </div>
     `;
   }
 }

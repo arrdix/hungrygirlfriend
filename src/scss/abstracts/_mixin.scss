@@ -24,3 +24,7 @@
   width: 100%;
   height: 100vh;
 }
+@mixin half-screen {
+  width: 100%;
+  height: 50vh;
+}

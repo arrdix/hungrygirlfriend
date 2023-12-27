@@ -1,11 +1,11 @@
 import '../components/HomeHero';
 
-const HomeHero = {
-  render({ subTitle, title, tagline }) {
+const Hero = {
+  render({ subtitle, title, tagline }) {
     const heroElement = document.createElement('home-hero');
-    heroElement.heroContent = {
+    heroElement.content = {
       title,
-      subTitle,
+      subtitle,
       tagline,
     };
 
@@ -14,4 +14,4 @@ const HomeHero = {
   },
 };
 
-export default HomeHero;
+export default Hero;

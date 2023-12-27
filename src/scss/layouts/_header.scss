@@ -69,6 +69,8 @@
   }
 
   @media screen and (min-width: 1000px) {
+    justify-self: center;
+
     & .btn-book {
       display: none !important;
     }

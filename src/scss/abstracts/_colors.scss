@@ -7,7 +7,6 @@ $clr-focus: #add8e6;
 $clr-good: #0ea600;
 $clr-bad: #f50a0a;
 
-.grayscale {
-  filter: grayscale(100%);
+.fade-effect {
   filter: brightness(50%);
 }

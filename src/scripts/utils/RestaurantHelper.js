@@ -26,6 +26,26 @@ const RestaurantHelper = {
 
     return false;
   },
+
+  renderStars(rating) {
+    const stars = [];
+    for (let i = 1; i <= rating; i++) {
+      stars.push('<i class="fa-solid fa-star"></i>');
+    }
+
+    if (!(rating % 1 === 0))
+      stars.push('<i class="fa-solid fa-star-half-stroke"></i>');
+
+    return stars.join('');
+  },
+
+  renderTag() {
+    return `
+    <div class="box-tag">
+      <p>Recommended</p>
+    </div>
+    `;
+  },
 };
 
 export default RestaurantHelper;
