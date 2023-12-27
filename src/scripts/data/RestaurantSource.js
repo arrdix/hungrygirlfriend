@@ -17,7 +17,7 @@ const RestaurantSource = {
   async restaurantDetail(id) {
     try {
       const response = await axios.get(API_ENDPOINT.DETAIL(id));
-      return response.data.restaurants;
+      return response.data.restaurant;
     } catch (error) {
       console.log(error.code, error.message);
       return window.alert(

@@ -27,7 +27,6 @@ const Restaurant = {
     const roundedRating = RestaurantHelper.ratingRounder(restaurant.rating);
     const restaurantBox = document.createElement('restaurant-box');
 
-    restaurantBox.setAttribute('id', `${restaurant.id}`);
     restaurantBox.classList.add(
       'box',
       `${

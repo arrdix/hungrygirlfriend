@@ -15,12 +15,26 @@ class RestaurantBox extends HTMLElement {
     <div class="action-overlay ${
       this._recommendedRestaurant.includes(this._restaurant.id) ? 'big' : ''
     }">
-      <h3 class="box-title">${this._restaurant.name} | ${
-        this._restaurant.rating
-      } <i class="star fa-solid fa-star"></i></h3>
-      <button type="button" aria-label="show ${this._restaurant.name} detail">
-        <i class="full-screen fa-solid fa-expand"></i>
+      <h3 class="box-title">${this._restaurant.name}</h3>
+      <button type="button" class="btn-detail" aria-label="show ${
+        this._restaurant.name
+      } detail">
+        <i class="icon-detail fa-solid fa-circle-info"></i>
       </button>
+    </div>
+    <div class="favorite-overlay">
+      <button type="button" class="btn-favorite" id="${
+        this._restaurant.id
+      }" aria-label="add NAME to favorite">
+        <i class="icon-favorite fa-solid fa-heart"></i>
+      </button>
+    </div>
+    <div class="rating-overlay">
+      <h4 class="rating">${
+        this._restaurant.rating % 1 === 0
+          ? `${this._restaurant.rating}.0`
+          : this._restaurant.rating
+      }</h4>
     </div>
     <button type="button" aria-label="show ${
       this._restaurant.name

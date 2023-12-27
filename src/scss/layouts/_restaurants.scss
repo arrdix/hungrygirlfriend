@@ -18,6 +18,7 @@
 .box-wrapper {
   overflow: hidden;
   margin-block: 0;
+  @include mixin.flexbox(center, center, column);
 
   @media screen and (min-width: 650px) {
     margin-block: 0.25rem;
@@ -68,6 +69,8 @@
 .box {
   position: relative;
   overflow: hidden;
+  width: 100%;
+  height: 100%;
   margin-bottom: 0.5rem;
 
   @media screen and (min-width: 650px) {
@@ -87,7 +90,18 @@
     }
 
     &:hover .action-overlay {
-      transform: translateY(0);
+      transform: translate(-50%, 0);
+      transition: transform 0.3s ease 0.3s;
+    }
+
+    
+    &:hover .rating-overlay {
+      transform: translateX(0);
+      transition: transform 0.3s ease 0.3s;
+    }
+
+    &:hover .favorite-overlay {
+      transform: translateX(0);
       transition: transform 0.3s ease 0.3s;
     }
 
@@ -108,11 +122,11 @@
   height: 100%;
   bottom: 0;
   left: 0;
-  z-index: 1;
   padding: 1rem;
   opacity: 1;
   text-align: center;
   color: clr.$clr-primary;
+  z-index: 1;
   transition: opacity 0.3s ease-in-out;
   @include mixin.flexbox(center, center, column);
 
@@ -215,30 +229,38 @@
 .action-overlay {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 50%;
+  width: 75%;
   height: auto;
-  padding-inline: 1rem;
+  margin-top: .5rem;
+  border-radius: 50px;
   background-color: rgba($color: black, $alpha: 0.6);
-  transform: translateY(-100%);
+  transform: translate(-50%, -125%);
   transition: transform 0.3s ease;
   z-index: 2;
   @include mixin.flexbox(space-between, center, row);
 
-  & h3,
-  .full-screen {
+  & .box-title {
+    margin-left: 1rem;
     min-width: 45px;
     min-height: 45px;
-    font-size: fonts.$fs-7;
+    font-size: fonts.$fs-3;
     color: clr.$clr-primary;
     @include mixin.flexbox(flex-end, center, row);
   }
 
-  &.big,
-  .full-screen {
-    & h3 {
-      font-size: fonts.$fs-7;
+  &.big {
+    padding-inline: .5rem;
+    padding-block: .5rem;
+
+    & .box-title {
+      font-size: fonts.$fs-8;
     }
+
+    & .star, .icon-detail {
+      font-size: fonts.$fs-8;
+    }
+    
   }
 
   & .star {
@@ -246,10 +268,73 @@
     font-size: fonts.$fs-5;
     color: clr.$clr-golden;
   }
+
+  & .btn-detail {
+    min-width: 45px;
+    min-height: 45px;
+    color: clr.$clr-primary;
+
+    & i {
+      font-size: fonts.$fs-6;
+    }
+  }
+}
+.rating-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  min-width: 45px;
+  min-height: 45px;
+  padding: .75rem;
+  border-radius: 50%;
+  background-color: rgba($color: black, $alpha: 0.6);
+  transform: translateX(-200%);
+  transition: transform 0.3s ease;
+  z-index: 2;
+  @include mixin.flexbox(center, center, row);
+
+  & .rating {
+    color: clr.$clr-golden;
+    font-size: fonts.$fs-7;
+    font-weight: fonts.$fw-bold;
+    line-height: 2;
+    letter-spacing: 1px;
+  }
+}
+.favorite-overlay {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  padding: .25rem;
+  border-radius: 50%;
+  background-color: rgba($color: black, $alpha: 0.6);
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+  z-index: 2;
+
+  @media screen and (min-width: 650px) {
+    transform: translateX(200%);
+  }
+
+  & .btn-favorite {
+    color: clr.$clr-primary;
+    min-width: 45px;
+    min-height: 45px;
+
+    &.favorited {
+      color: red;
+    }
+
+    & .icon-favorite {
+      font-size: fonts.$fs-8;
+    }
+  }
 }
 .small-label {
-  font-size: fonts.$fs-7;
-}
-.smaller-label {
-  font-size: fonts.$fs-2;
+  font-size: fonts.$fs-3;
+  margin-inline: .25rem;
 }

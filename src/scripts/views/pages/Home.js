@@ -4,6 +4,7 @@ import LoadingHelper from '../../utils/LoadingHelper';
 import BookingForm from '../contents/BookingForm';
 import Hero from '../contents/Hero';
 import Restaurant from '../contents/Restaurant';
+import FavoriteHandler from '../../utils/FavoriteHandler';
 
 const Home = {
   renderSection() {
@@ -26,6 +27,7 @@ const Home = {
 
     const restaurants = await RestaurantSource.restaurantList();
     Restaurant.render(restaurants);
+    FavoriteHandler.init(restaurants);
 
     // BookingForm.init();
   },
