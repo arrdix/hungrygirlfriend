@@ -1,8 +1,9 @@
-import RestaurantSource from '../../data/RestaurantSource';
 import FavoriteRestaurant from '../contents/FavoriteRestaurant';
 import LoadingHelper from '../../utils/LoadingHelper';
 import Banner from '../contents/Banner';
-import TEXTS from '../../globals/Texts';
+import FavoriteRestaurantIDB from '../../data/FavoriteRestaurantIDB';
+import FavoriteHandler from '../../utils/FavoriteHandler';
+import STATIC from '../../globals/Static';
 
 const Favorite = {
   renderSection() {
@@ -12,16 +13,36 @@ const Favorite = {
     `;
   },
 
-  async renderContent() {
+  renderContent() {
     LoadingHelper.activateLoading();
 
     Banner.render({
-      title: TEXTS.BANNER_FAVORITE_TITLE,
-      subtitle: TEXTS.BANNER_FAVORITE_SUBTITLE,
+      title: STATIC.BANNER_FAVORITE_TITLE,
+      subtitle: STATIC.BANNER_FAVORITE_SUBTITLE,
+      image: STATIC.BANNER_FAVORITE_IMAGE,
     });
 
-    const restaurants = await RestaurantSource.restaurantList();
-    FavoriteRestaurant.render(restaurants);
+    this.prepareRenderFavorite();
+  },
+
+  prepareRenderFavorite() {
+    window.addEventListener('DatabaseUpdated', () => {
+      if (this.isOnFavoritePage()) {
+        this.renderFavorites();
+      }
+    });
+
+    this.renderFavorites();
+  },
+
+  isOnFavoritePage() {
+    return window.location.hash === '#/favorite';
+  },
+
+  async renderFavorites() {
+    const favoriteRestaurants = await FavoriteRestaurantIDB.getAllRestaurants();
+    FavoriteRestaurant.render(favoriteRestaurants);
+    FavoriteHandler.init(favoriteRestaurants);
   },
 };
 

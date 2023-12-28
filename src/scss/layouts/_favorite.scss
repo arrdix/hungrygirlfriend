@@ -1,10 +1,13 @@
+@use '../abstracts/mixin' as mixin;
+@use '../abstracts/colors' as clr;
+
 .favorite-wrapper {
   width: 100%;
   height: auto;
   display: grid;
   gap: .25rem;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 400px;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 350px;
 
   & .favorite-image {
     width: 100%;
@@ -23,5 +26,21 @@
     transition:
       transform 0.3s ease-in-out,
       filter 0.3s ease-in-out;
+  }
+
+  & .empty-message {
+    height: 50vh;
+    width: 100%;
+    color: clr.$clr-primary;
+    grid-column: 1 / 4;
+    @include mixin.flexbox(center, center, row);
+  }
+
+  @media screen and (min-width: 650px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (min-width: 1000px) {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

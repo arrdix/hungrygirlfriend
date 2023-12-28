@@ -3,6 +3,7 @@ import Home from '../views/pages/Home';
 
 const Routes = {
   '/': Home,
+  '/home': Home,
   '/favorite': Favorite,
 };
 

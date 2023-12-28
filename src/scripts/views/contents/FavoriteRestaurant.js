@@ -4,6 +4,30 @@ import '../components/RestaurantBox';
 
 const FavoriteRestaurant = {
   render(restaurants) {
+    const favoriteWrapper = document.getElementById('favorite');
+
+    if (favoriteWrapper) {
+      if (this.isEmpty(restaurants)) {
+        favoriteWrapper.innerHTML = this.renderEmptyMessage();
+        LoadingHelper.deactivateLoading();
+        return;
+      }
+
+      favoriteWrapper.innerHTML = '';
+    }
+
+    this.prepareRestaurant(restaurants);
+  },
+
+  isEmpty(restaurants) {
+    return restaurants.length === 0;
+  },
+
+  renderEmptyMessage() {
+    return '<h1 class="empty-message" id="empty-message">Um, you don\'t have any favorite restaurant yet.</h1>';
+  },
+
+  prepareRestaurant(restaurants) {
     restaurants.forEach((restaurant) => {
       this.createResturantBox(restaurant);
     });

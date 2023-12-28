@@ -36,5 +36,13 @@
     color: clr.$clr-primary;
     font-weight: fonts.$fw-normal;
     font-size: fonts.$fs-3;
+
+    & .book-now {
+      color: clr.$clr-focus;
+
+      &:hover {
+        color: clr.$clr-primary;
+      }
+    }
   }
 }

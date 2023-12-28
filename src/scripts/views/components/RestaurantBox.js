@@ -23,7 +23,7 @@ class RestaurantBox extends HTMLElement {
       </button>
     </div>
     <div class="favorite-overlay">
-      <button type="button" class="btn-favorite" id="${
+      <button type="button" class="btn-fav" id="${
         this._restaurant.id
       }" aria-label="add NAME to favorite">
         <i class="icon-favorite fa-solid fa-heart"></i>
