@@ -1,6 +1,7 @@
-const FormValidation = {
+const FormValidater = {
   validate(inputField, { badValidation, goodValidation }) {
     if (this.isValid(inputField)) {
+      console.log(inputField.value);
       this.renderGoodValidation(badValidation, goodValidation);
       return inputField.value;
     }
@@ -27,4 +28,4 @@ const FormValidation = {
   },
 };
 
-export default FormValidation;
+export default FormValidater;

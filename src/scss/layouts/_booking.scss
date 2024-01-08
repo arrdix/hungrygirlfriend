@@ -1,0 +1,52 @@
+@use '../abstracts/mixin' as mixin;
+
+.booking-wrapper {
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  @include mixin.flexbox(center, flex-start, column);
+
+  @media screen and (min-width: 850px) {
+    height: 600px;
+    gap: .5rem;
+    @include mixin.flexbox(center, flex-start, row);
+  }
+}
+.booking-image-wrapper {
+  padding-block: .25rem;
+  width: 100%;
+  height: 100%;
+  
+  & .booking-image {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+
+    @media screen and (min-width: 1000px) {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &:not(relative) {
+    display: block;
+
+    @media screen and (max-width: 850px) {
+      display: none;
+    }
+  }
+
+
+    &.relative {
+    position: relative;
+    display: block;
+
+  & .booking-image {
+    filter: brightness(100%);
+
+    @media screen and (min-width: 850px) {
+      filter: brightness(50%);
+    }
+  }    
+  }
+}

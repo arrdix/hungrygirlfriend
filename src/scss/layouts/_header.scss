@@ -148,7 +148,7 @@
     @include mixin.grid-item-col(3, 4);
     @include mixin.flexbox(center, center, row);
 
-    & button {
+    & .btn-book {
       min-height: 45px;
       min-width: 45px;
       color: clr.$clr-primary;

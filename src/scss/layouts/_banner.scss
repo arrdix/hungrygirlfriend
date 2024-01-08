@@ -6,7 +6,12 @@
   overflow: hidden;
   position: relative;
   margin-bottom: .25rem;
-  @include mixin.half-screen;
+  width: 100%;
+  height: 175px;
+
+  @media screen and (min-width: 650px) {
+    height: 250px;
+  }
 
   & .banner-image {
     width: 100%;
@@ -24,18 +29,27 @@
   @include mixin.flexbox(center, center, column);
 
   & .banner-title {
-    margin-top: 2rem;
+    margin-top: 4rem;
     text-align: center;
     color: clr.$clr-primary;
     font-weight: fonts.$fw-bolder;
-    font-size: fonts.$fs-9;
+    font-size: fonts.$fs-8;
+
+    @media screen and (min-width: 650px) {
+      margin-top: 3.5rem;
+      font-size: fonts.$fs-9;
+    }
   }
 
   & .banner-subtitle {
     text-align: center;
     color: clr.$clr-primary;
     font-weight: fonts.$fw-normal;
-    font-size: fonts.$fs-3;
+    font-size: fonts.$fs-1;
+
+    @media screen and (min-width: 650px) {
+      font-size: fonts.$fs-3;
+    }
 
     & .book-now {
       color: clr.$clr-focus;

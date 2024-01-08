@@ -1,96 +1,85 @@
-import FormValidation from '../../utils/FormValidation';
+import API_ENDPOINT from '../../globals/APIEndpoint';
+import FormHelper from '../../utils/FormHelper';
+import LoadingHelper from '../../utils/LoadingHelper';
+import '../components/FormOverlay';
+import '../components/InputForm';
+import '../components/SelectForm';
+import '../components/TextareaForm';
 
 const BookingForm = {
-  init() {
-    this.initialListener();
-    this.populateRestaurant();
-  },
+  render(restaurants) {
+    this.renderFormOverlay({
+      id: 'form-overlay',
+      firstClass: 'form-overlay',
+      secondClass: 'glass',
+    });
 
-  initialListener() {
+    FormHelper.renderInput({
+      labelName: 'Name',
+      inputType: 'text',
+      inputName: 'name',
+      inputClass: 'name',
+      inputId: 'input-name',
+      inputAriaLabel: 'input-name',
+    });
+
+    FormHelper.renderInput({
+      labelName: 'Date',
+      inputType: 'date',
+      inputName: 'date',
+      inputClass: 'date',
+      inputId: 'input-date',
+      inputAriaLabel: 'input-date',
+    });
+
+    FormHelper.renderSelect(restaurants);
+
+    FormHelper.renderTextarea({
+      labelName: 'Note',
+      textareaName: 'note',
+      textareaClass: 'note',
+      textareaId: 'input-note',
+      textareaAriaLabel: 'input-note',
+    });
+
+    FormHelper.renderInput({
+      inputType: 'submit',
+      inputName: 'submit',
+      inputClass: 'submit',
+      inputValue: 'Book Now',
+    });
+
     document
-      .getElementById('btn-back')
-      .addEventListener('click', this.toggleFormDispose);
-    document
-      .getElementById('booking-form')
-      .addEventListener('submit', (event) => {
-        event.preventDefault();
-        this.validateOnUserSubmit();
+      .getElementById('input-restaurant')
+      .addEventListener('change', (event) => {
+        this.renderRestaurantImage(restaurants, event.target.value);
       });
+
+    LoadingHelper.deactivateLoading();
   },
 
-  validateOnUserSubmit() {
-    const inputFields = [
-      'input-name',
-      'input-date',
-      'input-restaurant',
-      'input-note',
-    ];
-    const validatedInput = this.inputValidation(inputFields);
+  renderFormOverlay({ id, firstClass, secondClass }) {
+    const formOverlay = document.createElement('form-overlay');
+    formOverlay.classList.add(firstClass, secondClass);
+    formOverlay.setAttribute('id', id);
 
-    if (validatedInput.length === inputFields.length) {
-      window.alert('Booking restaurant success!');
-      window.alert(validatedInput.join(' | '));
-
-      document.getElementById('btn-back').click();
-    }
-
-    this.validateOnUserInput(inputFields);
+    const bookingImageWrapper = document.getElementById(
+      'booking-image-wrapper',
+    );
+    bookingImageWrapper.append(formOverlay);
   },
 
-  validateOnUserInput(inputFields) {
-    inputFields.forEach((inputField) => {
-      document
-        .getElementById(inputField)
-        .addEventListener('input', this.inputLiveValidation);
+  renderRestaurantImage(restaurants, selectedRestaurant) {
+    const filteredRestaurant = restaurants.filter(
+      (restaurant) => restaurant.name === selectedRestaurant,
+    );
+
+    document.querySelectorAll('.booking-image').forEach((element) => {
+      element.setAttribute(
+        'src',
+        API_ENDPOINT.IMAGE_LARGE(filteredRestaurant[0].pictureId),
+      );
     });
-  },
-
-  inputValidation(inputFields) {
-    return inputFields
-      .map((inputField) =>
-        FormValidation.validate(document.getElementById(inputField), {
-          badValidation: document.querySelector(
-            `.${inputField}-validation.bad`,
-          ),
-          goodValidation: document.querySelector(
-            `.${inputField}-validation.good`,
-          ),
-        }),
-      )
-      .filter((inputValue) => inputValue !== undefined);
-  },
-
-  inputLiveValidation() {
-    FormValidation.validate(document.getElementById(this.id), {
-      badValidation: document.querySelector(`.${this.id}-validation.bad`),
-      goodValidation: document.querySelector(`.${this.id}-validation.good`),
-    });
-  },
-
-  toggleFormDispose() {
-    const heroOverlay = document.getElementById('hero-overlay');
-    const formOverlay = document.getElementById('form-overlay');
-
-    heroOverlay.classList.toggle('active');
-    formOverlay.classList.toggle('active');
-  },
-
-  async populateRestaurant() {
-    // try {
-    //   const response = await DataSource.getData();
-    //   populateToDropdown(response.data.restaurants);
-    // } catch (error) {
-    //   window.alert(error.message);
-    // }
-    // function populateToDropdown(restaurants) {
-    //   restaurants.forEach((restaurant) => {
-    //     const dropdownItem = document.createElement('option');
-    //     dropdownItem.setAttribute('value', `${restaurant.name}`);
-    //     dropdownItem.textContent = `${restaurant.name}`;
-    //     const inputRestaurant = document.getElementById('input-restaurant');
-    //     inputRestaurant.append(dropdownItem);
-    //   });
-    // }
   },
 };
 

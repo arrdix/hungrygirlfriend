@@ -29,12 +29,12 @@ const FavoriteRestaurant = {
 
   prepareRestaurant(restaurants) {
     restaurants.forEach((restaurant) => {
-      this.createResturantBox(restaurant);
+      this.createRestaurantBox(restaurant);
     });
     LoadingHelper.deactivateLoading();
   },
 
-  createResturantBox(restaurant) {
+  createRestaurantBox(restaurant) {
     const roundedRating = RestaurantHelper.ratingRounder(restaurant.rating);
     const restaurantBox = document.createElement('restaurant-box');
     restaurantBox.classList.add('box');
