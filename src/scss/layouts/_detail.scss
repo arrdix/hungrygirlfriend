@@ -2,55 +2,374 @@
 @use '../abstracts/fonts' as fonts;
 @use '../abstracts/mixin' as mixin;
 
-.detail-wrapper {
-  width: 75%;
-  padding: 2rem;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: repeat(3, 1fr);
+.about-wrapper {
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
 
-  & .detail-image {
-    object-fit: cover;
-    width: 100%;
+  & .restaurant-about {
     height: 100%;
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-  }
+    text-align: center;
+    gap: 2rem;
+    @include mixin.flexbox(center, center, column);
 
-  & .detail-info {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    gap: 1rem;
-    @include mixin.flexbox(flex-start, flex-start, column);
+    & .desc-title {
+      color: clr.$clr-primary;
+      font-weight: fonts.$fw-bolder;
+      font-size: fonts.$fs-8;
+  
+      @media screen and (min-width: 650px) {
+        font-size: fonts.$fs-9;
+      }
+    }
+  
+    & .desc-content {
+      width: 75%;
+      color: clr.$clr-primary;
+      font-size: fonts.$fs-4;
+  
+      @media screen and (min-width: 650px) {
+        font-size: fonts.$fs-7;
+      }
+  
+      @media screen and (min-width: 1000px) {
+        width: 50%;
+      }
+    }
   }
+}
+.menu-wrapper {
+  overflow: hidden;
+  width: 100%;
+  min-height: 100vh;
+  padding-block: 2rem;
 
-  & .detail-head {
-    display: inline;
-    color: clr.$clr-primary;
-    font-weight: fonts.$fw-bold;
-    padding-bottom: .5rem;
+  .restaurant-menu {
+    height: 100%;
+    text-align: center;
+    @include mixin.flexbox(flex-start, center, column);
 
-    &::after {
-      display: inline-block;
-      content: '';
-      width: 25px;
+    & .menu-title {
+      color: clr.$clr-primary;
+      font-weight: fonts.$fw-bolder;
+      font-size: fonts.$fs-8;
+      margin-bottom: 1rem;
+  
+      @media screen and (min-width: 650px) {
+        font-size: fonts.$fs-9;
+        margin-bottom: 5rem;
+      }
+    }
+  
+    & .menu-container {
+      width: 100%;
+      color: clr.$clr-primary;
+      font-size: fonts.$fs-5;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      @media screen and (min-width: 650px) {
+        width: 75%;
+        grid-template-columns: 1fr .5fr 1fr;
+      }
+  
+      & .foods-wrapper, .drinks-wrapper {
+        gap: .25rem;
+        @include mixin.flexbox(flex-start, center, column);
+
+        @media screen and (min-width: 650px) {
+          gap: 1rem;
+        }
+  
+        & .foods-title, .drinks-title {
+          font-weight: fonts.$fw-bolder;
+          font-size: fonts.$fs-7;
+          margin-bottom: 1rem;
+  
+          @media screen and (min-width: 650px) {
+            gap: 1rem;
+            font-size: fonts.$fs-8;
+          }
+        }
+  
+        & .food-item, .drink-item {
+          font-size: fonts.$fs-4;
+        }
+      }
+
+      & .food-icon {
+        font-size: fonts.$fs-10;
+        align-self: center;
+        display: none;
+
+        @media screen and (min-width: 650px) {
+          display: block;
+        }
+      }
+    }
   }
-  }
+}
+.review-wrapper {
+  overflow: hidden;
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem;
+  @include mixin.flexbox(center, center, column);
 
-  & .detail-body {  
-    margin-top: .5rem;
-    color: clr.$clr-primary;
-    font-size: fonts.$fs-4;
+  & .restaurant-review {
+    text-align: center;
+    gap: 2rem;
+    @include mixin.flexbox(center, center, column);
+
+    & .review-title {
+      color: clr.$clr-primary;
+      font-weight: fonts.$fw-bolder;
+      font-size: fonts.$fs-8;
+      margin-bottom: 1rem;
+  
+      @media screen and (min-width: 650px) {
+        font-size: fonts.$fs-9;
+        margin-bottom: 3rem;
+      }
+    }
+  
+    & .review-box {
+      overflow: hidden;
+      color: clr.$clr-primary;
+      border: 1px dotted white;
+      padding: 2rem;
+      width: 75%;
+      min-height: 250px;
+      gap: 1rem;
+      @include mixin.flexbox(space-between, center, column);
+  
+      @media screen and (min-width: 650px) {
+        min-height: 250px;
+        @include mixin.flexbox(space-between, center, column);
+      }
+  
+      @media screen and (min-width: 1000px) {
+        width: 80%;
+      }
+
+      & .box-wrapper {
+        width: 100%;
+        gap: 1rem;
+        @include mixin.flexbox(center, center, column);
+
+        @media screen and (min-width: 650px) {
+          @include mixin.flexbox(flex-start, flex-start, column);
+        }
+
+        &.start {
+          opacity: 0;
+          transform: translateY(300%);
+          transition: transform .75s ease;
+        }
+
+        &.show {
+          opacity: 1;
+          transform: translateY(0);
+          transition: transform .75s ease;
+        }
+
+        &.hide {
+          opacity: 0;
+          transform: translateY(-200%);
+          transition: transform .75s ease, opacity .1s ease .3s;
+        }
+    
+        & .box-head {
+          display: grid;
+          column-gap: 1rem;
+          grid-template-columns: 50px auto;
+          grid-template-rows: repeat(2, auto);
+    
+          & .box-image {
+            border-radius: 100%;
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            grid-column: 1 / 2;
+            grid-row: 1 / 3;
+          }
+    
+          & .box-name {
+            justify-self: self-start;
+            align-self: self-end;
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+            font-size: fonts.$fs-6;
+            font-weight: fonts.$fw-medium;
+    
+            @media screen and (min-width: 650px) {
+              font-size: fonts.$fs-8;
+            }
+          }
+    
+          & .box-date {
+            justify-self: self-start;
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+            font-size: fonts.$fs-1;
+    
+            @media screen and (min-width: 650px) {
+              font-size: fonts.$fs-3;
+            }
+          }
+        }
+    
+        & .box-content {
+          text-align: center;
+          font-size: fonts.$fs-4;
+    
+          @media screen and (min-width: 650px) {
+            text-align: left;
+            font-size: fonts.$fs-6;
+          }
+        }
+      }
+
+      & .box-tag {
+        background-color: clr.$clr-dark;
+        align-self: center;
+
+        @media screen and (min-width: 650px) {
+          align-self: self-end;
+        }
+      }
+    }
+
+    & .btn-add-review {
+      padding-block: 1rem;
+      padding-inline: 2rem;
+      border-radius: .5rem;
+      border: 2px solid rgba($color: clr.$clr-primary, $alpha: .5);
+      color: clr.$clr-primary;
+  
+      & i {
+        margin-right: .5rem;
+      }
+  
+      &:hover {
+        border: 2px solid clr.$clr-primary;
+      }
+    }
+  }
+}
+.review-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba($color: black, $alpha: .5);
+  z-index: 2;
+  @include mixin.flexbox(center, center, row);
+
+  & .form-container {
+    width: 350px;
+    height: 500px;
+    padding: 2rem;
+    background-color: clr.$clr-dark;
+    @include mixin.flexbox(space-between, center, column);
+
+    & .form-head {
+      width: 100%;
+      border-bottom: 1px solid rgba($color: clr.$clr-primary, $alpha: .2);
+      @include mixin.flexbox(center, center, row);
+
+      & .form-title {
+        color: clr.$clr-primary;
+        font-size: fonts.$fs-6;
+        font-weight: fonts.$fw-medium;
+        padding-bottom: 2rem;
+      }
+    }
+
+    & .review-form {
+      width: 100%;
+    }
+
+    & .form-foot {
+      width: 100%;
+      border-top: 1px solid rgba($color: clr.$clr-primary, $alpha: .2);
+      gap: .5rem;
+      @include mixin.flexbox(flex-end, center, row);
+
+      & .input-wrapper {
+        width: auto !important;
+        margin-bottom: 0 !important;
+      }
+
+      & .btn-post-review, .btn-cancel-review {
+        cursor: pointer;
+        margin-top: 2rem;
+        margin-bottom: 0 !important;
+        padding-block: .5rem;
+        padding-inline: 1.5rem;
+        border-radius: .5rem;
+        min-height: 45px;
+        min-width: 45px;
+        border: 2px solid rgba($color: clr.$clr-primary, $alpha: .5);
+        color: clr.$clr-primary;
+
+        &:hover {
+          border: 2px solid clr.$clr-primary;
+        }
+      }
+    }
   }
 }
 hr.detail-line {
-  margin-left: 0;
-  width: 50%;
-  height: 2px;
-  background-color: clr.$clr-primary;
+  border: 0;
+  text-align: center;
+  
+  &:before {
+    content: "\2022 \2022 \2022";
+    font-size: fonts.$fs-10;
+    color: clr.$clr-primary;
+  }
 }
-.icon {
-  color: white;
-  margin-right: .5rem;
+.btn-fav.detail {
+  position: fixed;
+  z-index: 1000;
+  bottom: 0;
+  right: 0;
+
+  margin-inline: 2rem;
+  margin-block: 4rem;
+  padding-inline: 1rem;
+  padding-block: 0.74rem;
+
+  border-radius: 100%;
+  background: rgba(49, 49, 49, 0.5);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.1px);
+  -webkit-backdrop-filter: blur(6.1px);
+
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+
+  font-size: fonts.$fs-8;
+  color: clr.$clr-primary;
+
+  &.favorited {
+    color: red;
+  }
+
+  &:hover {
+    transform: translateY(-15%);
+    transition: transform 0.3s ease;
+  }
+
+  @media screen and (min-width: 650px) {
+    margin-inline: 2rem;
+    margin-block: 4rem;
+    padding-inline: 1.25rem;
+    padding-block: 1rem;
+
+    font-size: fonts.$fs-9;
+  }
 }

@@ -13,15 +13,16 @@ const FavoriteHandler = {
       const btnFavorite = document.getElementById(restaurant.id);
 
       if (await this.isExist(restaurant.id)) {
-        btnFavorite.classList.add('favorited');
+        btnFavorite?.classList.add('favorited');
       } else {
-        btnFavorite.classList.remove('favorited');
+        btnFavorite?.classList.remove('favorited');
       }
     });
   },
 
   initialListener() {
     document.querySelectorAll('.btn-fav').forEach((btn) => {
+      console.log(btn);
       btn.addEventListener('click', () => {
         btn.classList.toggle('favorited');
 

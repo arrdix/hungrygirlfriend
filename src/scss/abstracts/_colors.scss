@@ -9,4 +9,10 @@ $clr-bad: #f50a0a;
 
 .fade-effect {
   filter: brightness(50%);
+  transition: filter .5s ease-in-out;
+
+  &.off {
+    filter: brightness(85%);
+    transition: filter .5s ease-in-out;
+  }
 }

@@ -16,11 +16,13 @@ class RestaurantBox extends HTMLElement {
       this._recommendedRestaurant.includes(this._restaurant.id) ? 'big' : ''
     }">
       <h3 class="box-title">${this._restaurant.name}</h3>
-      <button type="button" class="btn-detail" aria-label="show ${
+      <a href="#/detail/${
+        this._restaurant.id
+      }" type="button" class="btn-detail" aria-label="show ${
         this._restaurant.name
       } detail">
         <i class="icon-detail fa-solid fa-circle-info"></i>
-      </button>
+      </a>
     </div>
     <div class="favorite-overlay">
       <button type="button" class="btn-fav" id="${
@@ -36,7 +38,7 @@ class RestaurantBox extends HTMLElement {
           : this._restaurant.rating
       }</h4>
     </div>
-    <button type="button" aria-label="show ${
+    <a href="#/detail/${this._restaurant.id}" aria-label="show ${
       this._restaurant.name
     } detail" class="box-overlay ${
       this._recommendedRestaurant.includes(this._restaurant.id) ? 'big' : ''
@@ -51,7 +53,7 @@ class RestaurantBox extends HTMLElement {
       <div class="box-star-wrapper">
         ${RestaurantHelper.renderStars(this._roundedRating)}
       </div>
-    </button>
+    </a>
     <img src="${API_ENDPOINT.IMAGE_LARGE(
       this._restaurant.pictureId,
     )}" class="restaurant-image">

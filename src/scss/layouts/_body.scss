@@ -6,6 +6,8 @@ a,
 button,
 input {
   border: 1px solid transparent;
+  min-width: 45px;
+  min-height: 45px;
 
   &:focus {
     border: 1px solid clr.$clr-focus;

@@ -32,9 +32,7 @@
           <a href="" class="btn-restaurant">RESTAURANT</a>
           <a href="#/favorite" class="btn-favorite">FAVORITE</a>
           <button type="button" class="btn-book">BOOK</button>
-          <button type="button" class="btn-dropdown" id="btn-dropdown">
-            ABOUT
-          </button>
+          <button type="button" class="btn-dropdown" id="btn-dropdown">ABOUT</button>
         </nav>
         <div class="book-wrapper">
           <a href="#/booking" class="btn-book">Book for me</a>
@@ -72,13 +70,120 @@
       </div>
     </header>
     <main id="main-content">
-      <!-- <section class="banner-wrapper" id="banner">
+      <section class="banner-wrapper expanded" id="banner">
         <img src="images/heros/hero-image_4.jpg" class="banner-image fade-effect zoom active" alt="">
         <div class="banner-overlay">
           <h1 class="banner-title">BOOK RESTAURANT</h1>
           <h2 class="banner-subtitle">BOOK BEST RESTAURANT FOR YOU</h2>
+          <button class="btn-collapse">
+            <i class="fa-solid fa-expand"></i>
+            Expand
+          </button>
         </div>
-      </section> -->
+      </section>
+      <section class="desc-wrapper" id="desc">
+        <div class="desc-title">ABOUT RESTAURANT</div>
+        <div class="desc-content">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.
+        </div>
+      </section>
+      <hr class="detail-line">
+      <section class="menu-wrapper" id="menu">
+        <div class="menu-title">MENU</div>
+        <div class="menu-container">
+          <div class="foods-wrapper">
+            <div class="foods-title">FOODS</div>
+            <div class="food-item">FOOD 1</div>
+            <div class="food-item">FOOD 2</div>
+            <div class="food-item">FOOD 3</div>
+            <div class="food-item">FOOD 4</div>
+            <div class="food-item">FOOD 5</div>
+          </div>
+          <div class="drinks-wrapper">
+            <div class="drinks-title">DRINKS</div>
+            <div class="drink-item">DRINK 1</div>
+            <div class="drink-item">DRINK 2</div>
+            <div class="drink-item">DRINK 3</div>
+            <div class="drink-item">DRINK 4</div>
+            <div class="drink-item">DRINK 5</div>
+          </div>
+        </div>
+      </section>
+      <hr class="detail-line">
+      <section class="review-wrapper" id="review">
+        <div class="review-title">RESTAURANT NAME</div>
+        <div class="review-box">
+          <div class="box-head">
+            <img src="https://placehold.co/50x50/FFF/000000?text=A" class="box-image" alt="">
+            <div class="box-name">ARDI</div>
+            <div class="box-date">13 Januari 2024</div>
+          </div>
+          <div class="box-content">
+            Tidak rekomendasi untuk pelajar!
+          </div>
+          <button type="button" class="btn-utils">
+            <i class="fa-solid fa-stop"></i>
+            Stop
+          </button>
+        </div>
+        <button type="button" class="btn-add-review">
+          <i class="fa-solid fa-pen-to-square"></i>
+          Write a review
+        </button>
+      </section>
+      <div class="modal-review d-none">
+        <div class="form-container">
+          <div class="form-head">
+            <h1 class="form-title">
+              RESTAURANT NAME
+            </h1>
+          </div>
+          <form action="" class="review-form">
+            <div class="input-wrapper">
+              <div class="input-header">
+                <label for="name">Name</label>
+                <p class="input-name-validation form-validation good d-none">
+                  Looks good!
+                </p>
+                <p class="input-name-validation form-validation bad d-none">
+                  Please provide name with more than 4 characters
+                </p>
+              </div>
+              <input
+                type="text"
+                name="name"
+                id="input-name"
+                aria-label="input name"
+              />
+            </div>
+            <div class="input-wrapper">
+              <div class="input-header">
+                <label for="note">Review</label>
+                <p class="input-note-validation form-validation good d-none">
+                  Looks good!
+                </p>
+                <p class="input-note-validation form-validation bad d-none">
+                  Please provide note with more than 4 characters.
+                </p>
+              </div>
+              <input
+                type="textarea"
+                name="note"
+                class="note"
+                id="input-note"
+                aria-label="input note"
+              />
+            </div>
+          </form>
+          <div class="form-foot">
+            <button type="button" class="btn-cancel-review">Cancel</button>
+            <button type="button" class="btn-post-review">Post</button>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="btn-fav-detail favorited" aria-label="add to favorite">
+        <i class="fa-solid fa-heart"></i>
+      </a>
       <!-- <section class="booking-wrapper" id="booking">
         <div class="booking-image-wrapper relative">
           <img src="images/heros/hero-image_2.jpg" class="booking-image" alt="">
@@ -481,8 +586,8 @@
         <p>&copy; 2023 HUNGRYGIRLFRIEND | Made with ♥ by Yudistira Ardi</p>
       </div>
     </footer>
-    <a href="#" class="back-to-top" aria-label="back to top">
+    <!-- <a href="#" class="back-to-top" aria-label="back to top">
       <i class="fa-solid fa-angles-up"></i>
-    </a>
+    </a> -->
   </body>
 </html>

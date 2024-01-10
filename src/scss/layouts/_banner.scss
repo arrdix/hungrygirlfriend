@@ -7,10 +7,12 @@
   position: relative;
   margin-bottom: .25rem;
   width: 100%;
-  height: 175px;
+  height: 260px;
+  transition: height 1s ease-in-out;
 
   @media screen and (min-width: 650px) {
     height: 250px;
+    transition: height 1s ease-in-out;
   }
 
   & .banner-image {
@@ -19,6 +21,16 @@
     object-fit: cover;
 
   }
+
+  &.expanded {
+    height: 100vh;
+    transition: height 1s ease-in-out;
+  }
+
+  // &.expanded .banner-overlay {
+  //   opacity: 0;
+  //   transition: opacity .5s ease-in-out;
+  // }
 }
 .banner-overlay {
   position: absolute;
@@ -26,6 +38,8 @@
   left: 0;
   width: 100%;
   height: 100%;
+  opacity: 1;
+  transition: opacity .5s ease-in-out;
   @include mixin.flexbox(center, center, column);
 
   & .banner-title {
@@ -57,6 +71,25 @@
       &:hover {
         color: clr.$clr-primary;
       }
+    }
+  }
+
+  & .btn-expand {
+    margin-top: 1.5rem;
+    border-radius: .5rem;
+    padding-block: .5rem;
+    padding-inline: 1rem;
+    min-height: 45px;
+    min-width: 45px;
+    border: 2px solid rgba($color: clr.$clr-primary, $alpha: .5);
+    color: clr.$clr-primary;
+
+    & i {
+      margin-right: .25rem;
+    }
+
+    &:hover {
+      border: 2px solid clr.$clr-primary;
     }
   }
 }

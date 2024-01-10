@@ -273,6 +273,7 @@
     min-width: 45px;
     min-height: 45px;
     color: clr.$clr-primary;
+    @include mixin.flexbox(center, center, row);
 
     & i {
       font-size: fonts.$fs-6;

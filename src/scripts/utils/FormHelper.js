@@ -20,8 +20,7 @@ const FormHelper = {
       inputAriaLabel,
     };
 
-    const bookingForm = document.getElementById('booking-form');
-    bookingForm.append(inputForm);
+    return inputForm;
   },
 
   renderSelect(restaurants) {
@@ -29,8 +28,7 @@ const FormHelper = {
     selectForm.classList.add('input-wrapper');
     selectForm.attributes = restaurants;
 
-    const bookingForm = document.getElementById('booking-form');
-    bookingForm.append(selectForm);
+    return selectForm;
   },
 
   renderTextarea({
@@ -50,8 +48,7 @@ const FormHelper = {
       textareaAriaLabel,
     };
 
-    const bookingForm = document.getElementById('booking-form');
-    bookingForm.append(textareaForm);
+    return textareaForm;
   },
 };
 

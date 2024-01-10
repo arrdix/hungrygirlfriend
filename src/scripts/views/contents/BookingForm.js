@@ -1,10 +1,10 @@
 import API_ENDPOINT from '../../globals/APIEndpoint';
 import FormHelper from '../../utils/FormHelper';
 import LoadingHelper from '../../utils/LoadingHelper';
-import '../components/FormOverlay';
-import '../components/InputForm';
-import '../components/SelectForm';
-import '../components/TextareaForm';
+import '../components/form/FormOverlay';
+import '../components/form/InputForm';
+import '../components/form/SelectForm';
+import '../components/form/TextareaForm';
 
 const BookingForm = {
   render(restaurants) {
@@ -14,7 +14,7 @@ const BookingForm = {
       secondClass: 'glass',
     });
 
-    FormHelper.renderInput({
+    const inputName = FormHelper.renderInput({
       labelName: 'Name',
       inputType: 'text',
       inputName: 'name',
@@ -23,7 +23,7 @@ const BookingForm = {
       inputAriaLabel: 'input-name',
     });
 
-    FormHelper.renderInput({
+    const inputDate = FormHelper.renderInput({
       labelName: 'Date',
       inputType: 'date',
       inputName: 'date',
@@ -32,9 +32,14 @@ const BookingForm = {
       inputAriaLabel: 'input-date',
     });
 
-    FormHelper.renderSelect(restaurants);
+    const inputSubmit = FormHelper.renderInput({
+      inputType: 'submit',
+      inputName: 'submit',
+      inputClass: 'submit',
+      inputValue: 'Book Now',
+    });
 
-    FormHelper.renderTextarea({
+    const textareaForm = FormHelper.renderTextarea({
       labelName: 'Note',
       textareaName: 'note',
       textareaClass: 'note',
@@ -42,11 +47,19 @@ const BookingForm = {
       textareaAriaLabel: 'input-note',
     });
 
-    FormHelper.renderInput({
-      inputType: 'submit',
-      inputName: 'submit',
-      inputClass: 'submit',
-      inputValue: 'Book Now',
+    const selectForm = FormHelper.renderSelect(restaurants);
+
+    const inputs = [
+      inputName,
+      selectForm,
+      inputDate,
+      textareaForm,
+      inputSubmit,
+    ];
+
+    inputs.forEach((input) => {
+      const bookingForm = document.getElementById('booking-form');
+      bookingForm.append(input);
     });
 
     document
