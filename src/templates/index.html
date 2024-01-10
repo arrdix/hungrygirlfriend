@@ -10,135 +10,15 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="icon" href="images/logo-small.png" type="image/x-icon">
     <title>HUNGRYGIRLFRIEND</title>
   </head>
   <body>
-    <a href="" class="skip-to-content" aria-label="skip to content"
-      >Skip to Content</a
-    >
-    <div class="loading-wrapper">
-      <div class="loading-block loading" id="loading-block">
-      </div>
-    </div>
-    <section class="menu-modal glass offcanvas active" id="menu-modal">
-      <nav class="menu-wrapper">
-        <div class="book-sm-wrapper">
-          <a href="#/booking"id="btn-sm-book">BOOK FOR ME</a>
-        </div>
-        <a href="#/home">HOME</a>
-        <a href="#/favorite">FAVORITE</a>
-        <div class="socials-items">
-          <a
-            href="https://www.linkedin.com/in/yudistiraardi/"
-            aria-label="linkedin"
-          >
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-          <a href="https://www.instagram.com/arrdix/" aria-label="instagram">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-          <a href="https://www.github.com/arrdix/" aria-label="github">
-            <i class="fa-brands fa-github"></i>
-          </a>
-          <a
-            href="https://api.whatsapp.com/send?phone=6281903864037"
-            aria-label="whatsapp"
-          >
-            <i class="fa-brands fa-whatsapp"></i>
-          </a>
-          <a href="mailto:mail.ardix@gmail.com" aria-label="email">
-            <i class="fa-solid fa-envelope"></i>
-          </a>
-        </div>
-      </nav>
-    </section>
-    <header>
-      <div class="header-wrapper glass" id="header">
-        <div class="logo-wrapper">
-          <a href="/">
-            <img src="images/logo-white.png" class="header-logo" alt="logo" />
-          </a>
-        </div>
-        <nav class="nav-wrapper">
-          <a href="#/home" class="btn-home">HOME</a>
-          <a href="#/favorite" class="btn-favorite">FAVORITE</a>
-          <a href="#/booking" class="btn-md-book">BOOK</a>
-          <button type="button" class="btn-dropdown" id="btn-dropdown">ABOUT</button>
-        </nav>
-        <div class="book-wrapper">
-          <a href="#/booking" class="btn-book">Book for me</a>
-        </div>
-        <div class="bars-wrapper">
-          <button type="button" id="btn-menu">
-            <i class="fa-solid fa-bars"></i>
-          </button>
-        </div>
-      </div>
-      <div class="nav-dropdown glass" id="nav-dropdown">
-        <div class="dropdown-items" id="dropdown-items">
-          <a
-            href="https://www.linkedin.com/in/yudistiraardi/"
-            aria-label="linkedin"
-          >
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-          <a href="https://www.instagram.com/arrdix/" aria-label="instagram">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-          <a href="https://www.github.com/arrdix/" aria-label="github">
-            <i class="fa-brands fa-github"></i>
-          </a>
-          <a
-            href="https://api.whatsapp.com/send?phone=6281903864037"
-            aria-label="whatsapp"
-          >
-            <i class="fa-brands fa-whatsapp"></i>
-          </a>
-          <a href="mailto:mail.ardix@gmail.com" aria-label="email">
-            <i class="fa-solid fa-envelope"></i>
-          </a>
-        </div>
-      </div>
-    </header>
+    <skip-to-content id="skip-to-content"></skip-to-content>
+    <loading-block class="loading-wrapper" id="loading"></loading-block>
+    <menu-modal class="menu-modal glass offcanvas active" id="menu-modal"></menu-modal>
+    <app-header id="header"></app-header>
     <main id="main-content"></main>
-    <footer id="footer">
-      <div class="footer-wrapper">
-        <a href="/" class="footer-logo-wrapper">
-          <img src="images/logo-white.png" class="footer-logo" alt="logo" />
-        </a>
-        <div class="footer-connect-wrapper">
-          <a
-            href="https://www.linkedin.com/in/yudistiraardi/"
-            aria-label="linkedin"
-          >
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-          <a href="https://www.instagram.com/arrdix/" aria-label="instagram">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-          <a href="https://www.github.com/arrdix/" aria-label="github">
-            <i class="fa-brands fa-github"></i>
-          </a>
-          <a
-            href="https://api.whatsapp.com/send?phone=6281903864037"
-            aria-label="whatsapp"
-          >
-            <i class="fa-brands fa-whatsapp"></i>
-          </a>
-          <a href="mailto:mail.ardix@gmail.com" aria-label="email">
-            <i class="fa-solid fa-envelope"></i>
-          </a>
-        </div>
-        <div class="footer-nav-wrapper">
-          <a href="#/home">HOME</a>
-          <a href="#/favorite">FAVORITE</a>
-          <a href="#/booking">BOOK</a>
-          <button type="button" class="btn-dropdown">ABOUT</button>
-        </div>
-      </div>
-      <div class="copyright-wrapper">
-        <p>&copy; 2023 HUNGRYGIRLFRIEND | Made with ♥ by Yudistira Ardi</p>
-      </div>
-    </footer>
+    <app-footer id="footer"></app-footer>
   </body>
 </html>

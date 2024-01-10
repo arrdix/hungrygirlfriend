@@ -19,6 +19,7 @@
     "no-unused-expressions": ["error", { "allowTernary": true }],
     "no-underscore-dangle": "off",
     "class-methods-use-this": "off",
-    "no-restricted-globals": "off"
+    "no-restricted-globals": "off",
+    "import/no-useless-path-segments": "off"
   }
 }
