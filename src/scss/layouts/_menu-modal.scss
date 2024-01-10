@@ -18,7 +18,7 @@
     z-index: 1000;
   }
   .menu-wrapper {
-    @include mixin.flexbox(center, center, column);
+    @include mixin.flexbox(flex-start, center, column);
 
     & .book-sm-wrapper {
       width: 100%;

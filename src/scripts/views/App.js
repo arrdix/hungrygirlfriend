@@ -15,8 +15,8 @@ class App {
   }
 
   initAppShell() {
-    // AppHeader.init();
-    // MenuModal.init();
+    AppHeader.init();
+    MenuModal.init();
 
     this.initAppFunctionality();
   }

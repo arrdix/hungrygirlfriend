@@ -35,12 +35,13 @@
   text-align: center;
   color: clr.$clr-primary;
   font-weight: fonts.$fw-bolder;
-  font-size: fonts.$fs-10;
-  line-height: 2.5rem;
+  font-size: fonts.$fs-9;
+  line-height: 1.75rem;
   margin-bottom: 2rem;
 
   @media screen and (min-width: 650px) {
     font-size: fonts.$fs-10;
+    line-height: 2.5rem;
   }
 }
 .hero-subtitle {

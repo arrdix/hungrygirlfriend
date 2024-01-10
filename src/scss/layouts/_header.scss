@@ -53,7 +53,7 @@
     @include mixin.flexbox(center, center, row);
 
     & a,
-    .btn-book {
+    .btn-md-book {
       min-height: 45px;
       min-width: 45px;
       text-decoration: none;
@@ -71,7 +71,7 @@
   @media screen and (min-width: 1000px) {
     justify-self: center;
 
-    & .btn-book {
+    & .btn-md-book {
       display: none !important;
     }
   }

@@ -14,16 +14,6 @@ const MenuModal = {
       disposeMenuModal();
     });
 
-    document.getElementById('btn-sm-book').addEventListener('click', () => {
-      const menuModal = document.getElementById('menu-modal');
-      const heroOverlay = document.getElementById('hero-overlay');
-      const formOverlay = document.getElementById('form-overlay');
-
-      menuModal.classList.toggle('active');
-      heroOverlay.classList.toggle('active');
-      formOverlay.classList.toggle('active');
-    });
-
     function disposeMenuModal() {
       const menuModal = document.getElementById('menu-modal');
       menuModal.classList.toggle('active');
