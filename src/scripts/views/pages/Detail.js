@@ -3,7 +3,6 @@ import API_ENDPOINT from '../../globals/APIEndpoint';
 import urlParser from '../../routes/UrlParser';
 import FavoriteHandler from '../../utils/FavoriteHandler';
 import FormValidationInitiator from '../../utils/FormValidationInitiator';
-import LoadingHelper from '../../utils/LoadingHelper';
 import Banner from '../contents/Banner';
 import RestaurantDetail from '../contents/RestaurantDetail';
 
@@ -20,8 +19,6 @@ const Detail = {
   },
 
   async renderContent() {
-    LoadingHelper.activateLoading();
-
     const movieId = urlParser.getUrlId();
     const restaurant = await RestaurantSource.restaurantDetail(movieId);
     const restaurants = await RestaurantSource.restaurantList();

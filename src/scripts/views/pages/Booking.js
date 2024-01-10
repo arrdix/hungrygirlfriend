@@ -1,7 +1,6 @@
 import RestaurantSource from '../../data/RestaurantSource';
 import STATIC from '../../globals/Static';
 import FormValidationInitiator from '../../utils/FormValidationInitiator';
-import LoadingHelper from '../../utils/LoadingHelper';
 import Banner from '../contents/Banner';
 import BookingForm from '../contents/BookingForm';
 
@@ -21,8 +20,6 @@ const Booking = {
   },
 
   async renderContent() {
-    LoadingHelper.activateLoading();
-
     Banner.render({
       title: STATIC.BANNER_BOOKING_TITLE,
       sutitle: STATIC.BANNER_BOOKING_SUBTITLE,

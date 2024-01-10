@@ -1,4 +1,3 @@
-import LoadingHelper from '../../utils/LoadingHelper';
 import RestaurantHelper from '../../utils/RestaurantHelper';
 import '../components/RestaurantBox';
 
@@ -19,8 +18,6 @@ const Restaurant = {
         recommendedId,
       });
     });
-
-    LoadingHelper.deactivateLoading();
   },
 
   createRestaurantBox({ restaurant, recommendedRestaurant, recommendedId }) {

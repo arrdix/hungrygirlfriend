@@ -1,6 +1,5 @@
 import RestaurantSource from '../../data/RestaurantSource';
 import TEXTS from '../../globals/Static';
-import LoadingHelper from '../../utils/LoadingHelper';
 import Hero from '../contents/Hero';
 import Restaurant from '../contents/Restaurant';
 import FavoriteHandler from '../../utils/FavoriteHandler';
@@ -16,7 +15,6 @@ const Home = {
   },
 
   async renderContent() {
-    LoadingHelper.activateLoading();
     Hero.render({
       title: TEXTS.HERO_TITLE,
       subtitle: TEXTS.HERO_SUBTITLE,

@@ -1,6 +1,5 @@
 import API_ENDPOINT from '../../globals/APIEndpoint';
 import FormHelper from '../../utils/FormHelper';
-import LoadingHelper from '../../utils/LoadingHelper';
 import '../components/form/FormOverlay';
 import '../components/form/InputForm';
 import '../components/form/SelectForm';
@@ -67,8 +66,6 @@ const BookingForm = {
       .addEventListener('change', (event) => {
         this.renderRestaurantImage(restaurants, event.target.value);
       });
-
-    LoadingHelper.deactivateLoading();
   },
 
   renderFormOverlay({ id, firstClass, secondClass }) {

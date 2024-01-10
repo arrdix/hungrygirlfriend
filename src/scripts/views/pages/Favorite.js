@@ -1,5 +1,4 @@
 import FavoriteRestaurant from '../contents/FavoriteRestaurant';
-import LoadingHelper from '../../utils/LoadingHelper';
 import Banner from '../contents/Banner';
 import FavoriteRestaurantIDB from '../../data/FavoriteRestaurantIDB';
 import FavoriteHandler from '../../utils/FavoriteHandler';
@@ -14,8 +13,6 @@ const Favorite = {
   },
 
   renderContent() {
-    LoadingHelper.activateLoading();
-
     Banner.render({
       title: STATIC.BANNER_FAVORITE_TITLE,
       subtitle: STATIC.BANNER_FAVORITE_SUBTITLE,

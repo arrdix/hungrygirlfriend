@@ -1,4 +1,3 @@
-import LoadingHelper from '../../utils/LoadingHelper';
 import RestaurantHelper from '../../utils/RestaurantHelper';
 import '../components/RestaurantBox';
 
@@ -9,7 +8,6 @@ const FavoriteRestaurant = {
     if (favoriteWrapper) {
       if (this.isEmpty(restaurants)) {
         favoriteWrapper.innerHTML = this.renderEmptyMessage();
-        LoadingHelper.deactivateLoading();
         return;
       }
 
@@ -31,7 +29,6 @@ const FavoriteRestaurant = {
     restaurants.forEach((restaurant) => {
       this.createRestaurantBox(restaurant);
     });
-    LoadingHelper.deactivateLoading();
   },
 
   createRestaurantBox(restaurant) {

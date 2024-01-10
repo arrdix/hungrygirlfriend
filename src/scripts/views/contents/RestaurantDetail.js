@@ -1,7 +1,6 @@
 import AnimationHelper from '../../utils/AnimationHelper';
 import ElementHelper from '../../utils/ElementHelper';
 import FormHelper from '../../utils/FormHelper';
-import LoadingHelper from '../../utils/LoadingHelper';
 import '../components/detail/RestaurantAbout';
 import '../components/detail/RestaurantMenu';
 import '../components/detail/RestaurantReview';
@@ -16,8 +15,6 @@ const RestaurantDetail = {
     this.renderReviewModal(restaurant);
     this.renderFavoriteButton(restaurant);
     this.initialListener();
-
-    LoadingHelper.deactivateLoading();
   },
 
   renderAbout(restaurant) {
