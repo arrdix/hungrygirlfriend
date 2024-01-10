@@ -1,34 +1,47 @@
+import { FormReviewHasBeenSent } from './EventTools';
 import FormValidater from './FormValidater';
 
 const FormValidationInitiator = {
-  init() {
-    this.initialListener();
+  init({ formName, inputIds = [] }) {
+    this.initialListener({ formName, inputIds });
+    this.formData = '';
+
+    return this.formData;
   },
 
-  initialListener() {
-    document
-      .getElementById('booking-form')
-      .addEventListener('submit', (event) => {
-        event.preventDefault();
-        this.validateOnUserSubmit();
-      });
+  initialListener({ formName, inputIds }) {
+    document.getElementById(formName).addEventListener('submit', (event) => {
+      event.preventDefault();
+      this.validateOnUserSubmit(inputIds);
+    });
   },
 
-  validateOnUserSubmit() {
-    const inputFields = [
-      'input-name',
-      'input-date',
-      'input-restaurant',
-      'input-note',
-    ];
+  validateOnUserSubmit(inputIds) {
+    const inputFields = [...inputIds];
     const validatedInput = this.inputValidation(inputFields);
 
     if (validatedInput.length === inputFields.length) {
-      window.alert('Booking restaurant success!');
+      window.alert('Form sent!');
       window.alert(validatedInput.join(' | '));
+
+      // trigger FormReviewHasBeenSent event if it's review form
+      if (validatedInput.length === 2) {
+        this.triggerReviewEvent(validatedInput);
+      }
+
+      location.reload();
     }
 
     this.validateOnUserInput(inputFields);
+  },
+
+  triggerReviewEvent(inputDatas) {
+    const data = {
+      name: inputDatas[0],
+      review: inputDatas[1],
+    };
+
+    dispatchEvent(FormReviewHasBeenSent(data));
   },
 
   validateOnUserInput(inputFields) {

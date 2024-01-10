@@ -46,7 +46,7 @@ const RestaurantSource = {
           'Content-Type': 'application/json',
         },
       });
-      return response.data.restaurants;
+      return response.data.message;
     } catch (error) {
       console.log(error.code, error.message);
       return window.alert(

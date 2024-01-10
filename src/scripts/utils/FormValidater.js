@@ -1,7 +1,6 @@
 const FormValidater = {
   validate(inputField, { badValidation, goodValidation }) {
     if (this.isValid(inputField)) {
-      console.log(inputField.value);
       this.renderGoodValidation(badValidation, goodValidation);
       return inputField.value;
     }

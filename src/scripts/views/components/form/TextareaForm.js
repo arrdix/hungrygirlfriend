@@ -19,11 +19,11 @@ class TextareaForm extends HTMLElement {
     this.innerHTML = `
       <div class="input-header">
         <label for="note">${this.labelName}</label>
-        <p class="input-note-validation form-validation good d-none">
+        <p class="input-${this.textareaName}-validation form-validation good d-none">
           Looks good!
         </p>
-        <p class="input-note-validation form-validation bad d-none">
-          Please provide note with more than 4 characters.
+        <p class="input-${this.textareaName}-validation form-validation bad d-none">
+          ${this.labelName} must be more than 4 chars.
         </p>
       </div>
       <textarea

@@ -1,6 +1,6 @@
 import FavoriteRestaurantIDB from '../data/FavoriteRestaurantIDB';
 import RestaurantSource from '../data/RestaurantSource';
-import DatabaseUpdated from './EventTools';
+import { DatabaseUpdated } from './EventTools';
 
 const FavoriteHandler = {
   init(restaurant) {
@@ -22,7 +22,6 @@ const FavoriteHandler = {
 
   initialListener() {
     document.querySelectorAll('.btn-fav').forEach((btn) => {
-      console.log(btn);
       btn.addEventListener('click', () => {
         btn.classList.toggle('favorited');
 

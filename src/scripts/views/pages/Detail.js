@@ -2,6 +2,7 @@ import RestaurantSource from '../../data/RestaurantSource';
 import API_ENDPOINT from '../../globals/APIEndpoint';
 import urlParser from '../../routes/UrlParser';
 import FavoriteHandler from '../../utils/FavoriteHandler';
+import FormValidationInitiator from '../../utils/FormValidationInitiator';
 import LoadingHelper from '../../utils/LoadingHelper';
 import Banner from '../contents/Banner';
 import RestaurantDetail from '../contents/RestaurantDetail';
@@ -34,6 +35,22 @@ const Detail = {
 
     RestaurantDetail.render(restaurant);
     FavoriteHandler.init(restaurants);
+
+    FormValidationInitiator.init({
+      formName: 'review-form',
+      inputIds: ['input-name', 'input-review'],
+    });
+
+    window.addEventListener('ReviewSent', (event) => {
+      const review = event.detail;
+      review.id = restaurant.id;
+
+      this.addReview(review);
+    });
+  },
+
+  async addReview(review) {
+    RestaurantSource.addReview(JSON.stringify(review));
   },
 };
 

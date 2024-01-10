@@ -1,7 +1,11 @@
-const DatabaseUpdated = new CustomEvent('DatabaseUpdated', {
+export const DatabaseUpdated = new CustomEvent('DatabaseUpdated', {
   detail: {
     message: 'IndexedDB Updated!',
   },
 });
 
-export default DatabaseUpdated;
+export function FormReviewHasBeenSent(data) {
+  return new CustomEvent('ReviewSent', {
+    detail: data,
+  });
+}

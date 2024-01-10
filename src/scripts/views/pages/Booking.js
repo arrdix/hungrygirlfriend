@@ -31,7 +31,11 @@ const Booking = {
 
     const restaurants = await RestaurantSource.restaurantList();
     BookingForm.render(restaurants);
-    FormValidationInitiator.init();
+
+    FormValidationInitiator.init({
+      formName: 'booking-form',
+      inputIds: ['input-name', 'input-date', 'input-restaurant', 'input-note'],
+    });
   },
 };
 

@@ -94,7 +94,7 @@ const RestaurantDetail = {
     const textareaForm = FormHelper.renderTextarea({
       labelName: 'Review',
       textareaName: 'review',
-      textareaClass: 'note',
+      textareaClass: 'review',
       textareaId: 'input-review',
       textareaAriaLabel: 'input-review',
     });
@@ -102,7 +102,7 @@ const RestaurantDetail = {
     const inputs = [inputForm, textareaForm];
 
     inputs.forEach((input) => {
-      const reviewForm = document.getElementById('review-form');
+      const reviewForm = document.getElementById('form-body');
       reviewForm.append(input);
     });
 

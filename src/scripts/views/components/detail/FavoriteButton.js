@@ -1,7 +1,6 @@
 class FavoriteButton extends HTMLElement {
   set restaurant(restaurant) {
     this._restaurant = restaurant;
-    console.log(this.restaurant);
 
     this.render();
   }

@@ -10,6 +10,7 @@
   & .restaurant-about {
     height: 100%;
     text-align: center;
+    padding: 2rem;
     gap: 2rem;
     @include mixin.flexbox(center, center, column);
 
@@ -268,7 +269,7 @@
   z-index: 2;
   @include mixin.flexbox(center, center, row);
 
-  & .form-container {
+  & .review-form {
     width: 350px;
     height: 500px;
     padding: 2rem;
@@ -288,7 +289,7 @@
       }
     }
 
-    & .review-form {
+    & .form-body {
       width: 100%;
     }
 

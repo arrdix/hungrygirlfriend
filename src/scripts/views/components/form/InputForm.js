@@ -31,7 +31,7 @@ class InputForm extends HTMLElement {
         Looks good!
       </p>
       <p class="input-${this.inputName}-validation form-validation bad d-none">
-        Please provide name with more than 4 characters
+        ${this.labelName} must be more than 4 chars.
       </p>
     </div>
     <input
