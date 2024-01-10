@@ -70,12 +70,11 @@
     height: 45px;
     color: clr.$clr-primary;
     font-size: fonts.$fs-9;
-    transform: translateY(0);
-    transition: transform 0.3s ease;
+    transition: color 0.3s ease;
 
     &:hover {
-      transform: translateY(15%);
-      transition: transform 0.3s ease;
+      color: clr.$clr-golden;
+      transition: color 0.3s ease;
     }
   }
 

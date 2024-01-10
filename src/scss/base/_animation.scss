@@ -14,6 +14,14 @@
     transform: scale(1.1);
   }
 }
+@keyframes utd-effect {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(15%);
+  }
+}
 .disposable {
   opacity: 1;
   visibility: visible;
@@ -52,4 +60,7 @@
   &.active {
     animation: zoom-effect 5s ease-in-out 0s 1 normal forwards;
   }
+}
+.uptodown {
+  animation: utd-effect 1s ease-in-out 0s infinite alternate;
 }

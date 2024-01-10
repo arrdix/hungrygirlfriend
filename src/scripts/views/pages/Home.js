@@ -3,6 +3,7 @@ import TEXTS from '../../globals/Static';
 import Hero from '../contents/Hero';
 import Restaurant from '../contents/Restaurant';
 import FavoriteHandler from '../../utils/FavoriteHandler';
+import SmoothScrolling from '../../utils/SmoothScrolling';
 
 const Home = {
   renderSection() {
@@ -24,6 +25,8 @@ const Home = {
     const restaurants = await RestaurantSource.restaurantList();
     Restaurant.render(restaurants);
     FavoriteHandler.init(restaurants);
+
+    SmoothScrolling.initForContent();
   },
 };
 

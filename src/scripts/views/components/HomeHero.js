@@ -20,7 +20,7 @@ class HomeHero extends HTMLElement {
           <h2 class="hero-title">${this.title}</h2>
           <h2 class="hero-tagline">
             ${this.tagline}
-            <a href="#restaurant" aria-label="show restaurant">
+            <a href="#restaurant" class="uptodown" aria-label="show restaurant" id="btn-restaurant">
               <i class="fa-solid fa-angle-down"></i>
             </a>
           </h2>

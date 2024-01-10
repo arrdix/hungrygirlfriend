@@ -22,7 +22,7 @@ class App {
   }
 
   initAppFunctionality() {
-    SmoothScrolling.init();
+    SmoothScrolling.initForAppShell();
   }
 
   async render() {

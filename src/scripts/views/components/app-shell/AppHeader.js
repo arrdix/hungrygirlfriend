@@ -7,7 +7,7 @@ class AppHeader extends HTMLElement {
 
   render() {
     this.innerHTML = `
-      <div class="header-wrapper glass" id="header">
+      <div class="header-wrapper glass" id="header-wrapper">
         <div class="logo-wrapper">
           <a href="/">
             <img src="images/logo-white.png" class="header-logo" alt="logo" />
