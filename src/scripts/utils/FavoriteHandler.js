@@ -3,8 +3,9 @@ import RestaurantSource from '../data/RestaurantSource';
 import { DatabaseUpdated } from './EventTools';
 
 const FavoriteHandler = {
-  init(restaurant) {
-    this.initalize(restaurant);
+  init(restaurants) {
+    this._restaurants = restaurants;
+    this.initalize(this._restaurants);
     this.initialListener();
   },
 
@@ -32,7 +33,7 @@ const FavoriteHandler = {
   },
 
   async updateDatabase(restaurantId) {
-    const restaurant = await this.getRestaurant(restaurantId);
+    const restaurant = this.getRestaurant(restaurantId);
 
     if (await this.isExist(restaurant.id)) {
       this.deleteFavorite(restaurant.id);
@@ -41,14 +42,17 @@ const FavoriteHandler = {
     }
   },
 
-  async getRestaurant(restaurantId) {
-    const restaurant = await RestaurantSource.restaurantDetail(restaurantId);
+  getRestaurant(restaurantId) {
+    const restaurants = this._restaurants;
+    const restaurantDetail = restaurants.find(
+      (restaurant) => restaurant.id === restaurantId,
+    );
     return {
-      id: restaurant.id,
-      name: restaurant.name,
-      city: restaurant.city,
-      rating: restaurant.rating,
-      pictureId: restaurant.pictureId,
+      id: restaurantDetail.id,
+      name: restaurantDetail.name,
+      city: restaurantDetail.city,
+      rating: restaurantDetail.rating,
+      pictureId: restaurantDetail.pictureId,
     };
   },
 

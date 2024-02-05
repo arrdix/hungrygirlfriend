@@ -19,8 +19,8 @@ const Detail = {
   },
 
   async renderContent() {
-    const movieId = urlParser.getUrlId();
-    const restaurant = await RestaurantSource.restaurantDetail(movieId);
+    const restaurantId = urlParser.getUrlId();
+    const restaurant = await RestaurantSource.restaurantDetail(restaurantId);
     const restaurants = await RestaurantSource.restaurantList();
 
     Banner.render({

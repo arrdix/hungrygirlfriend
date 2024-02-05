@@ -9,11 +9,10 @@ class HomeHero extends HTMLElement {
 
   renderHero() {
     this.innerHTML = `
-      <img
-      src="images/heros/hero-image_2.jpg"
-      class="hero-image fade-effect zoom active"
-      alt="hero-image"
-      />
+      <picture>
+        <source media="(max-width: 600px)" srcset="images/heros/hero-image_2-small.jpg" class="hero-image fade-effect zoom active" type="image/jpeg" alt="hero-image">
+        <img src='images/heros/hero-image_2-large.jpg' class="hero-image fade-effect zoom active" alt="hero-image">
+      </picture>
       <div class="hero-overlay disposable" id="hero-overlay">
         <div class="hero-title-wrapper">
           <h1 class="hero-subtitle">${this.subtitle}</h1>

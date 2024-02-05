@@ -56,7 +56,9 @@ class RestaurantBox extends HTMLElement {
     </a>
     <img src="${API_ENDPOINT.IMAGE_LARGE(
       this._restaurant.pictureId,
-    )}" class="restaurant-image" aria-label="${this._restaurant.name} image">
+    )}" class="restaurant-image lazyload" aria-label="${
+      this._restaurant.name
+    } image">
     `;
   }
 }

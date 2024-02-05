@@ -19,7 +19,7 @@ const FavoriteRestaurantIDB = {
   },
 
   async updateRestaurant(restaurant, id) {
-    return (await databasePromise).put(OBJECT_STORE_NAME, restaurant, id);
+    (await databasePromise).put(OBJECT_STORE_NAME, restaurant, id);
   },
 
   async deleteRestaurant(id) {

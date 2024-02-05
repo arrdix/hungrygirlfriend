@@ -22,7 +22,7 @@ const Booking = {
   async renderContent() {
     Banner.render({
       title: STATIC.BANNER_BOOKING_TITLE,
-      sutitle: STATIC.BANNER_BOOKING_SUBTITLE,
+      subtitle: STATIC.BANNER_BOOKING_SUBTITLE,
       image: STATIC.BANNER_BOOKING_IMAGE,
     });
 

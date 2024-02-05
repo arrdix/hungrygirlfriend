@@ -8,12 +8,6 @@ input {
   border: 1px solid transparent;
   min-width: 45px;
   min-height: 45px;
-
-  &:focus {
-    border: 1px solid clr.$clr-focus;
-    box-shadow: 0 0 5px rgba($color: clr.$clr-focus, $alpha: 0.5);
-    outline: none;
-  }
 }
 .skip-to-content {
   position: absolute;

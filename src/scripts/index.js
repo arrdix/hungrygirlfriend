@@ -9,6 +9,8 @@ import '../scripts/views/components/app-shell/SkipToContent';
 import App from './views/App';
 import ServiceWorkerTools from './utils/ServiceWorkerTools';
 import LoadingHelper from './utils/LoadingHelper';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const app = new App({
   header: document.getElementById('header'),

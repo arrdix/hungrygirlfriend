@@ -26,4 +26,4 @@ build/
 .DS_Store
 
 # Ignore personal note
-notes
+*.txt
